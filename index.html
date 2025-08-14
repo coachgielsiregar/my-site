@@ -1,24 +1,2776 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>My Canva Site</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
+    <title>UBSI Store - Merchandise Kampus</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#008642',
+                        accent: '#FFD700'
+                    }
+                }
+            }
         }
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
+    </script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .slide-in {
+            animation: slideIn 0.3s ease-out;
+        }
+        @keyframes slideIn {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
         }
     </style>
 </head>
-<body>
-    <iframe src="https://ubsistory.my.canva.site/ubsistory"></iframe>
-</body>
-</html>
+<body class="bg-gray-50 font-sans">
+    <!-- Navigation -->
+    <nav class="bg-primary text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-accent rounded-full flex items-center justify-center">
+                        <span class="text-primary font-bold text-xl">U</span>
+                    </div>
+                    <h1 class="text-2xl font-bold">UBSI Story</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button onclick="showPage('home')" class="hover:text-accent transition-colors">Beranda</button>
+                    <button onclick="showPage('products')" class="hover:text-accent transition-colors">Produk</button>
+                    <button onclick="showPage('gallery')" class="hover:text-accent transition-colors">Gallery</button>
+                    <button onclick="showPage('faq')" class="hover:text-accent transition-colors">FAQ</button>
+                    <button onclick="showPage('tracking')" class="hover:text-accent transition-colors">Tracking</button>
+                    <button onclick="showPage('about')" class="hover:text-accent transition-colors">Tentang Kami</button>
+                    <button onclick="showPage('contact')" class="hover:text-accent transition-colors">Kontak</button>
+                    <button onclick="showPage('admin')" class="hover:text-accent transition-colors">Admin</button>
+                </div>
+            </div>
+        </div>
+    </nav>
 
+    <!-- Home Page -->
+    <div id="homePage" class="page">
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-r from-primary to-green-600 text-white py-20">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-5xl font-bold mb-4 fade-in">Merchandise Kampus Terbaik</h2>
+                <p class="text-xl mb-8 fade-in">Dapatkan merchandise UBSI berkualitas tinggi dengan desain eksklusif</p>
+                <button onclick="showPage('products')" class="bg-accent text-primary px-8 py-3 rounded-lg font-bold text-lg hover:bg-yellow-400 transition-colors fade-in">
+                    Belanja Sekarang
+                </button>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="py-16">
+            <div class="container mx-auto px-4">
+                <h3 class="text-3xl font-bold text-center mb-12 text-gray-800">Produk Unggulan</h3>
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow fade-in">
+                        <div class="bg-accent text-primary text-center py-1 text-xs font-bold">⭐ UNGGULAN 2025</div>
+                        <div class="h-40 bg-gradient-to-br from-primary to-green-400 flex items-center justify-center">
+                            <span class="text-5xl">👕</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-lg font-bold mb-2">Baju Semot UBSI 2025</h4>
+                            <p class="text-gray-600 mb-3 text-sm">Kaos resmi Semot UBSI 2025</p>
+                            <div class="mb-2">
+                                <span class="text-xs text-gray-500 line-through mr-1">Rp 120.000</span>
+                                <span class="text-lg font-bold text-primary">Rp 78.000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow fade-in">
+                        <div class="bg-accent text-primary text-center py-1 text-xs font-bold">⭐ UNGGULAN 2025</div>
+                        <div class="h-40 bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center">
+                            <span class="text-5xl">📄</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-lg font-bold mb-2">Papermop Semot 2025</h4>
+                            <p class="text-gray-600 mb-3 text-sm">Paper Mop resmi Semot 2025</p>
+                            <div class="mb-2">
+                                <span class="text-xs text-gray-500 line-through mr-1">Rp 70.000</span>
+                                <span class="text-lg font-bold text-primary">Rp 40.000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow fade-in">
+                        <div class="bg-accent text-primary text-center py-1 text-xs font-bold">⭐ UNGGULAN 2025</div>
+                        <div class="h-40 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+                            <span class="text-5xl">🏷️</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-lg font-bold mb-2">Name Tag Semot 2025</h4>
+                            <p class="text-gray-600 mb-3 text-sm">Name tag resmi Semot UBSI 2025</p>
+                            <div class="mb-2">
+                                <span class="text-xs text-gray-500 line-through mr-1">Rp 20.000</span>
+                                <span class="text-lg font-bold text-primary">Rp 15.000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow fade-in">
+                        <div class="bg-accent text-primary text-center py-1 text-xs font-bold">⭐ UNGGULAN 2025</div>
+                        <div class="h-40 bg-gradient-to-br from-accent to-yellow-400 flex items-center justify-center">
+                            <span class="text-5xl">🆔</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-lg font-bold mb-2">KTM Mahasiswa UBSI</h4>
+                            <p class="text-gray-600 mb-3 text-sm">KTM custom dengan desain eksklusif</p>
+                            <div class="mb-3">
+                                <span class="text-xs text-gray-500 line-through mr-1">Rp 35.000</span>
+                                <span class="text-lg font-bold text-primary">Rp 15.000</span>
+                            </div>
+                            <button onclick="showProductDetail('ktm')" class="w-full bg-accent text-primary py-1 rounded text-sm hover:bg-yellow-400 transition-colors font-bold">
+                                Custom Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- KTM Custom Order Section -->
+        <section class="py-16 bg-gradient-to-r from-accent to-yellow-400">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-8">
+                        <h3 class="text-3xl font-bold text-primary mb-4">🆔 KTM Custom Order</h3>
+                        <p class="text-lg text-primary">Pesan KTM mahasiswa UBSI dengan desain custom langsung di sini!</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-xl p-8">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <div class="text-center mb-6">
+                                    <div class="text-6xl mb-4">🆔</div>
+                                    <div class="mb-4">
+                                        <span class="text-sm text-gray-500 line-through mr-2">Rp 35.000</span>
+                                        <span class="text-2xl font-bold text-primary">Rp 15.000</span>
+                                    </div>
+                                    <p class="text-gray-600">KTM mahasiswa UBSI dengan desain custom</p>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <form id="ktmQuickForm" class="space-y-4">
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Pilih Template:</label>
+                                        <select name="template" required class="w-full border rounded-lg px-3 py-2">
+                                            <option value="">-- Pilih Template --</option>
+                                            <option value="KTM UBSI">KTM UBSI</option>
+                                            <option value="NAME TAG SEMOT">NAME TAG SEMOT</option>
+                                            <option value="Custom Design">Custom Design</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">NAMA LENGKAP:</label>
+                                        <input type="text" name="fullName" required class="w-full border rounded-lg px-3 py-2" placeholder="NAMA LENGKAP ANDA" style="text-transform: uppercase;">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">NIM:</label>
+                                        <input type="text" name="nim" required class="w-full border rounded-lg px-3 py-2" placeholder="123456789">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">S1/D3 | JURUSAN | ASAL KAMPUS:</label>
+                                        <input type="text" name="prodi" required class="w-full border rounded-lg px-3 py-2" placeholder="S1 | Teknik Informatika | UBSI Serang">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Preview Pas Foto (Opsional):</label>
+                                        <input type="file" name="photo" accept="image/*" class="w-full border rounded-lg px-3 py-2">
+                                        <div id="quickPhotoPreview" class="mt-2 hidden">
+                                            <img id="quickPreviewImage" class="w-32 h-40 object-cover border rounded-lg">
+                                        </div>
+                                        <p class="text-sm text-red-600 mt-1 font-medium">⚠️ PENTING: Foto ini hanya untuk preview. Anda WAJIB kirim foto asli via WhatsApp!</p>
+                                        <p class="text-sm text-gray-600 mt-1">Format: JPG, PNG - Foto formal dengan latar belakang putih</p>
+                                    </div>
+                                    <div class="bg-red-50 p-4 rounded-lg border border-red-200">
+                                        <h4 class="font-bold text-red-800 mb-2">📸 CARA KIRIM FOTO:</h4>
+                                        <ol class="text-sm text-red-700 space-y-1 list-decimal list-inside">
+                                            <li>Isi form ini untuk copy data diri</li>
+                                            <li>Klik "Kirim Data via WhatsApp"</li>
+                                            <li>Copy & paste data diri ke WhatsApp</li>
+                                            <li><strong>KIRIM FOTO PAS LANGSUNG VIA WHATSAPP</strong></li>
+                                            <li>Tunggu konfirmasi admin</li>
+                                            <li>Lanjut beli via link yang diberikan</li>
+                                        </ol>
+                                    </div>
+                                    <div class="flex space-x-4 pt-4">
+                                        <button type="button" onclick="sendQuickKTMData()" class="flex-1 bg-accent text-primary py-2 rounded-lg hover:bg-yellow-400 transition-colors font-bold">
+                                            Kirim Data via WhatsApp
+                                        </button>
+                                        <button type="button" onclick="window.open('http://lynk.id/ubsi.story/687mkvmnn6pp', '_blank')" class="flex-1 bg-primary text-white py-2 rounded-lg hover:bg-green-700 transition-colors">
+                                            Beli Sekarang
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <h3 class="text-3xl font-bold text-center mb-4 text-gray-800">Testimonial</h3>
+                <p class="text-center text-gray-600 mb-12">Apa kata mereka tentang merchandise kami</p>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg shadow-lg p-6 fade-in">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+                                A
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Andi Wijaya</h4>
+                                <p class="text-sm text-gray-600">Teknik Informatika</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">"Kaos SEMOT sangat nyaman dipakai, bahan adem dan tidak mudah luntur meski sudah beberapa kali dicuci."</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 fade-in">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-primary font-bold text-lg mr-4">
+                                B
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Budi Santoso</h4>
+                                <p class="text-sm text-gray-600">Sistem Informasi</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">"ID Card KTM-nya keren banget, beda dari teman-teman lain. Pelayanannya juga cepat, hanya 2 hari sudah sampai."</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 fade-in">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+                                C
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Citra Lestari</h4>
+                                <p class="text-sm text-gray-600">Manajemen</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">"Papermop nya bagus, pengerjaan nya rapi, lem nya rapi, warna kertas nya sesuai panduan, mudah di bolak balik dan juga ringan dipakai, dikasi ucapan thanks card juga packing nya juga rapi meski dikirim ke luar kota."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Products Page -->
+    <div id="productsPage" class="page hidden">
+        <div class="container mx-auto px-4 py-8">
+            <h2 class="text-3xl font-bold mb-8 text-gray-800">Katalog Produk</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="productsGrid">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Page -->
+    <div id="galleryPage" class="page hidden">
+        <div class="container mx-auto px-4 py-8">
+            <h2 class="text-3xl font-bold mb-8 text-gray-800 text-center">Gallery & Portfolio</h2>
+            <p class="text-center text-gray-600 mb-12">Lihat hasil karya dan testimoni dari customer kami</p>
+            
+            <!-- Gallery Tabs -->
+            <div class="flex justify-center mb-8">
+                <div class="bg-white rounded-lg shadow-lg p-2 flex space-x-2">
+                    <button onclick="showGalleryTab('products')" id="productsTab" class="px-6 py-2 rounded-lg bg-primary text-white font-bold">
+                        Produk Jadi
+                    </button>
+                    <button onclick="showGalleryTab('testimonials')" id="testimonialsTab" class="px-6 py-2 rounded-lg text-gray-600 hover:bg-gray-100 font-bold">
+                        Testimoni
+                    </button>
+                    <button onclick="showGalleryTab('beforeafter')" id="beforeafterTab" class="px-6 py-2 rounded-lg text-gray-600 hover:bg-gray-100 font-bold">
+                        Before/After
+                    </button>
+                </div>
+            </div>
+
+            <!-- Products Gallery -->
+            <div id="productsGallery" class="gallery-content">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="h-64 bg-gradient-to-br from-primary to-green-400 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <div class="text-6xl mb-2">👕</div>
+                                <p class="font-bold">Kaos Semot 2025</p>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold mb-2">Kaos Semot UBSI</h4>
+                            <p class="text-sm text-gray-600">Bahan cotton combed 30s, sablon plastisol berkualitas tinggi</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="h-64 bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <div class="text-6xl mb-2">📄</div>
+                                <p class="font-bold">Papermop Semot</p>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold mb-2">Papermop Custom</h4>
+                            <p class="text-sm text-gray-600">Kertas ivory 230gsm, finishing glossy, spiral kawat</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="h-64 bg-gradient-to-br from-accent to-yellow-400 flex items-center justify-center">
+                            <div class="text-center text-primary">
+                                <div class="text-6xl mb-2">🆔</div>
+                                <p class="font-bold">KTM Custom</p>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold mb-2">KTM Mahasiswa</h4>
+                            <p class="text-sm text-gray-600">PVC premium, cetak digital full color, laminasi glossy</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="h-64 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <div class="text-6xl mb-2">🏷️</div>
+                                <p class="font-bold">Name Tag</p>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold mb-2">Name Tag Semot</h4>
+                            <p class="text-sm text-gray-600">Akrilik 3mm, cetak UV printing, tali lanyard premium</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="h-64 bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <div class="text-6xl mb-2">💼</div>
+                                <p class="font-bold">Portfolio</p>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold mb-2">Creative Portfolio</h4>
+                            <p class="text-sm text-gray-600">Template digital responsive, optimized untuk recruiter</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="h-64 bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <div class="text-6xl mb-2">📚</div>
+                                <p class="font-bold">Skripsi Binding</p>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold mb-2">Hard Cover Skripsi</h4>
+                            <p class="text-sm text-gray-600">Hard cover premium, hot print gold, kertas HVS 70gsm</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonials Gallery -->
+            <div id="testimonialsGallery" class="gallery-content hidden">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
+                                A
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Andi Wijaya</h4>
+                                <p class="text-sm text-gray-600">Teknik Informatika - UBSI Serang</p>
+                                <div class="flex text-yellow-400 text-sm">
+                                    ⭐⭐⭐⭐⭐
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="bg-gray-100 rounded-lg p-4 h-48 flex items-center justify-center">
+                                <div class="text-center text-gray-500">
+                                    <div class="text-4xl mb-2">📸</div>
+                                    <p class="text-sm">Foto Kaos Semot</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">"Kaos SEMOT sangat nyaman dipakai, bahan adem dan tidak mudah luntur meski sudah beberapa kali dicuci. Pengerjaan cepat, hanya 2 hari sudah jadi!"</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center text-primary font-bold text-xl mr-4">
+                                B
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Budi Santoso</h4>
+                                <p class="text-sm text-gray-600">Sistem Informasi - UBSI Jakarta</p>
+                                <div class="flex text-yellow-400 text-sm">
+                                    ⭐⭐⭐⭐⭐
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="bg-gray-100 rounded-lg p-4 h-48 flex items-center justify-center">
+                                <div class="text-center text-gray-500">
+                                    <div class="text-4xl mb-2">🆔</div>
+                                    <p class="text-sm">Foto KTM Custom</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">"ID Card KTM-nya keren banget, beda dari teman-teman lain. Pelayanannya juga cepat, admin responsif banget. Recommended!"</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
+                                C
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Citra Lestari</h4>
+                                <p class="text-sm text-gray-600">Manajemen - UBSI Bandung</p>
+                                <div class="flex text-yellow-400 text-sm">
+                                    ⭐⭐⭐⭐⭐
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="bg-gray-100 rounded-lg p-4 h-48 flex items-center justify-center">
+                                <div class="text-center text-gray-500">
+                                    <div class="text-4xl mb-2">📄</div>
+                                    <p class="text-sm">Foto Papermop</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">"Papermop nya bagus, pengerjaan rapi, lem nya rapi, warna kertas sesuai panduan. Mudah dibolak-balik dan ringan dipakai. Packing juga rapi!"</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
+                                D
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Dina Marlina</h4>
+                                <p class="text-sm text-gray-600">Akuntansi - UBSI Sukabumi</p>
+                                <div class="flex text-yellow-400 text-sm">
+                                    ⭐⭐⭐⭐⭐
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="bg-gray-100 rounded-lg p-4 h-48 flex items-center justify-center">
+                                <div class="text-center text-gray-500">
+                                    <div class="text-4xl mb-2">📚</div>
+                                    <p class="text-sm">Foto Skripsi Jadi</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">"Konsultasi skripsi sangat membantu! Dosen pembimbing juga memuji hasil revisi yang sudah diperbaiki. Worth it banget!"</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Before/After Gallery -->
+            <div id="beforeafterGallery" class="gallery-content hidden">
+                <div class="space-y-8">
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-bold mb-4 text-center">Konsultasi Portfolio - Before vs After</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold text-red-600 mb-3">❌ BEFORE</h4>
+                                <div class="bg-red-50 rounded-lg p-4 border border-red-200">
+                                    <div class="text-center text-red-400 mb-4">
+                                        <div class="text-4xl mb-2">📄</div>
+                                        <p class="text-sm">Portfolio Lama</p>
+                                    </div>
+                                    <ul class="text-sm text-red-700 space-y-1">
+                                        <li>• Tampilan monoton dan membosankan</li>
+                                        <li>• Tidak ada highlight skill utama</li>
+                                        <li>• Layout tidak responsive</li>
+                                        <li>• Konten tidak terstruktur</li>
+                                        <li>• Tidak ada call-to-action</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-green-600 mb-3">✅ AFTER</h4>
+                                <div class="bg-green-50 rounded-lg p-4 border border-green-200">
+                                    <div class="text-center text-green-400 mb-4">
+                                        <div class="text-4xl mb-2">💼</div>
+                                        <p class="text-sm">Portfolio Baru</p>
+                                    </div>
+                                    <ul class="text-sm text-green-700 space-y-1">
+                                        <li>• Desain modern dan eye-catching</li>
+                                        <li>• Skill dan achievement menonjol</li>
+                                        <li>• Responsive di semua device</li>
+                                        <li>• Konten terorganisir dengan baik</li>
+                                        <li>• Clear call-to-action untuk recruiter</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center mt-4">
+                            <span class="bg-accent text-primary px-4 py-2 rounded-lg font-bold">
+                                📈 Hasil: Interview rate naik 300%!
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-bold mb-4 text-center">Konsultasi Skripsi - Before vs After</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold text-red-600 mb-3">❌ BEFORE</h4>
+                                <div class="bg-red-50 rounded-lg p-4 border border-red-200">
+                                    <div class="text-center text-red-400 mb-4">
+                                        <div class="text-4xl mb-2">📚</div>
+                                        <p class="text-sm">Draft Awal</p>
+                                    </div>
+                                    <ul class="text-sm text-red-700 space-y-1">
+                                        <li>• Bab 1 tidak fokus dan melebar</li>
+                                        <li>• Metodologi penelitian lemah</li>
+                                        <li>• Referensi tidak up-to-date</li>
+                                        <li>• Analisis data kurang mendalam</li>
+                                        <li>• Kesimpulan tidak sesuai tujuan</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-green-600 mb-3">✅ AFTER</h4>
+                                <div class="bg-green-50 rounded-lg p-4 border border-green-200">
+                                    <div class="text-center text-green-400 mb-4">
+                                        <div class="text-4xl mb-2">🎓</div>
+                                        <p class="text-sm">Final Draft</p>
+                                    </div>
+                                    <ul class="text-sm text-green-700 space-y-1">
+                                        <li>• Rumusan masalah tajam dan spesifik</li>
+                                        <li>• Metodologi sesuai standar akademik</li>
+                                        <li>• Referensi terbaru dan relevan</li>
+                                        <li>• Analisis komprehensif dan valid</li>
+                                        <li>• Kesimpulan menjawab semua tujuan</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center mt-4">
+                            <span class="bg-accent text-primary px-4 py-2 rounded-lg font-bold">
+                                🎯 Hasil: Lulus sidang dengan nilai A!
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Page -->
+    <div id="faqPage" class="page hidden">
+        <div class="container mx-auto px-4 py-8">
+            <h2 class="text-3xl font-bold mb-8 text-gray-800 text-center">Frequently Asked Questions</h2>
+            <p class="text-center text-gray-600 mb-12">Pertanyaan yang sering ditanyakan seputar produk dan layanan kami</p>
+            
+            <div class="max-w-4xl mx-auto">
+                <!-- FAQ Categories -->
+                <div class="flex justify-center mb-8">
+                    <div class="bg-white rounded-lg shadow-lg p-2 flex flex-wrap gap-2">
+                        <button onclick="showFAQCategory('pemesanan')" id="pemesananFAQ" class="px-4 py-2 rounded-lg bg-primary text-white font-bold text-sm">
+                            Cara Pemesanan
+                        </button>
+                        <button onclick="showFAQCategory('waktu')" id="waktuFAQ" class="px-4 py-2 rounded-lg text-gray-600 hover:bg-gray-100 font-bold text-sm">
+                            Waktu Pengerjaan
+                        </button>
+                        <button onclick="showFAQCategory('pembayaran')" id="pembayaranFAQ" class="px-4 py-2 rounded-lg text-gray-600 hover:bg-gray-100 font-bold text-sm">
+                            Pembayaran
+                        </button>
+                        <button onclick="showFAQCategory('kebijakan')" id="kebijakanFAQ" class="px-4 py-2 rounded-lg text-gray-600 hover:bg-gray-100 font-bold text-sm">
+                            Kebijakan
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Pemesanan FAQ -->
+                <div id="pemesananFAQContent" class="faq-content">
+                    <div class="space-y-4">
+                        <div class="bg-white rounded-lg shadow-lg">
+                            <button onclick="toggleFAQ('faq1')" class="w-full text-left p-6 focus:outline-none">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="text-lg font-bold text-gray-800">🛒 Bagaimana cara memesan produk?</h3>
+                                    <span id="faq1-icon" class="text-2xl text-primary">+</span>
+                                </div>
+                            </button>
+                            <div id="faq1" class="hidden px-6 pb-6">
+                                <div class="border-t pt-4">
+                                    <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                                        <li>Pilih produk yang diinginkan di halaman Produk</li>
+                                        <li>Klik tombol "Beli Sekarang" atau "Custom Order"</li>
+                                        <li>Untuk produk custom (KTM), isi form data diri terlebih dahulu</li>
+                                        <li>Pilih platform pembelian: Lynk.id (lebih murah) atau Shopee</li>
+                                        <li>Lakukan pembayaran sesuai instruksi</li>
+                                        <li>Kirim bukti pembayaran via WhatsApp</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-lg shadow-lg">
+                            <button onclick="toggleFAQ('faq2')" class="w-full text-left p-6 focus:outline-none">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="text-lg font-bold text-gray-800">📱 Apakah bisa pesan via WhatsApp langsung?</h3>
+                                    <span id="faq2-icon" class="text-2xl text-primary">+</span>
+                                </div>
+                            </button>
+                            <div id="faq2" class="hidden px-6 pb-6">
+                                <div class="border-t pt-4">
+                                    <p class="text-gray-700">Ya, bisa! Anda dapat menghubungi kami langsung di WhatsApp <strong>081298227738</strong>. Namun untuk kemudahan dan keamanan transaksi, kami merekomendasikan pemesanan melalui platform resmi kami (Lynk.id atau Shopee).</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-lg shadow-lg">
+                            <button onclick="toggleFAQ('faq3')" class="w-full text-left p-6 focus:outline-none">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="text-lg font-bold text-gray-800">🆔 Bagaimana cara pesan KTM custom?</h3>
+                                    <span id="faq3-icon" class="text-2xl text-primary">+</span>
+                                </div>
+                            </button>
+                            <div id="faq3" class="hidden px-6 pb-6">
+                                <div class="border-t pt-4">
+                                    <div class="space-y-3 text-gray-700">
+                                        <p><strong>Langkah-langkah:</strong></p>
+                                        <ol class="list-decimal list-inside space-y-1">
+                                            <li>Isi form KTM di halaman Beranda atau Produk</li>
+                                            <li>Klik "Kirim Data via WhatsApp"</li>
+                                            <li>Copy pesan yang sudah disiapkan</li>
+                                            <li>Buka WhatsApp dan paste pesan tersebut</li>
+                                            <li><strong>WAJIB:</strong> Kirim pas foto formal (latar putih) via WhatsApp</li>
+                                            <li>Tunggu konfirmasi admin</li>
+                                            <li>Lakukan pembayaran via link yang diberikan</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-lg shadow-lg">
+                            <button onclick="toggleFAQ('faq4')" class="w-full text-left p-6 focus:outline-none">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="text-lg font-bold text-gray-800">📦 Apakah ada minimum order?</h3>
+                                    <span id="faq4-icon" class="text-2xl text-primary">+</span>
+                                </div>
+                            </button>
+                            <div id="faq4" class="hidden px-6 pb-6">
+                                <div class="border-t pt-4">
+                                    <p class="text-gray-700">Tidak ada minimum order untuk semua produk. Anda bisa pesan 1 pcs saja. Namun, ada promo spesial: <strong>minimal pembelian 10 pcs gratis 1 pcs ID Card KTM Full Set!</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Waktu Pengerjaan FAQ -->
+                <div id="waktuFAQContent" class="faq-content hidden">
+                    <div class="space-y-4">
+                        <div class="bg-white rounded-lg shadow-lg">
+                            <button onclick="toggleFAQ('faq5')" class="w-full text-left p-6 focus:outline-none">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="text-lg font-bold text-gray-800">⏰ Berapa lama waktu pengerjaan produk?</h3>
+                                    <span id="faq5-icon" class="text-2xl text-primary">+</span>
+                                </div>
+                            </button>
+                            <div id="faq5" class="hidden px-6 pb-6">
+                                <div class="border-t pt-4">
+                                    <div class="space-y-2 text-gray-700">
+                                        <p><strong>Estimasi waktu pengerjaan:</strong></p>
+                                        <ul class="list-disc list-inside space-y-1">
+                                            <li><strong>KTM Custom:</strong> 2-3 hari kerja</li>
+                                            <li><strong>Kaos Semot:</strong> 3-5 hari kerja</li>
+                                            <li><strong>Papermop:</strong> 2-4 hari kerja</li>
+                                            <li><strong>Name Tag:</strong> 1-2 hari kerja</li>
+                                            <li><strong>Portfolio Digital:</strong> 1-2 hari kerja</li>
+                                            <li><strong>Konsultasi:</strong> Sesuai jadwal yang disepakati</li>
+                                        </ul>
+                                        <p class="text-sm text-red-600 mt-2"><strong>*Waktu dapat lebih cepat atau lambat tergantung antrian pesanan</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-lg shadow-lg">
+                            <button onclick="toggleFAQ('faq6')" class="w-full text-left p-6 focus:outline-none">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="text-lg font-bold text-gray-800">🚚 Bagaimana dengan pengiriman?</h3>
+                                    <span id="faq6-icon" class="text-2xl text-primary">+</span>
+                                </div>
+                            </button>
+                            <div id="faq6" class="hidden px-6 pb-6">
+                                <div class="border-t pt-4">
+                                    <div class="space-y-2 text-gray-700">
+                                        <p><strong>Opsi pengiriman:</strong></p>
+                                        <ul class="list-disc list-inside space-y-1">
+                                            <li><strong>COD Serang:</strong> Gratis untuk area Serang</li>
+                                            <li><strong>JNE/J&T:</strong> 1-3 hari (biaya sesuai tarif ekspedisi)</li>
+                                            <li><strong>Gojek/Grab:</strong> Same day (khusus area Serang)</li>
+                                        </ul>
+                                        <p class="text-sm text-green-600 mt-2"><strong>*Pengiriman dilakukan setelah produk selesai dikerjakan</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-lg shadow-lg">
+                            <button onclick="toggleFAQ('faq7')" class="w-full text-left p-6 focus:outline-none">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="text-lg font-bold text-gray-800">⚡ Apakah ada layanan express/urgent?</h3>
+                                    <span id="faq7-icon" class="text-2xl text-primary">+</span>
+                                </div>
+                            </button>
+                            <div id="faq7" class="hidden px-6 pb-6">
+                                <div class="border-t pt-4">
+                                    <p class="text-gray-700">Ya, tersedia layanan express dengan tambahan biaya 50% dari harga normal. Produk dapat selesai dalam 1-2 hari kerja. Silakan hubungi admin untuk konfirmasi ketersediaan slot express.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pembayaran FAQ -->
+                <div id="pembayaranFAQContent" class="faq-content hidden">
+                    <div class="space-y-4">
+                        <div class="bg-white rounded-lg shadow-lg">
+                            <button onclick="toggleFAQ('faq8')" class="w-full text-left p-6 focus:outline-none">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="text-lg font-bold text-gray-800">💳 Metode pembayaran apa saja yang tersedia?</h3>
+                                    <span id="faq8-icon" class="text-2xl text-primary">+</span>
+                                </div>
+                            </button>
+                            <div id="faq8" class="hidden px-6 pb-6">
+                                <div class="border-t pt-4">
+                                    <div class="space-y-3 text-gray-700">
+                                        <p><strong>Via Lynk.id:</strong></p>
+                                        <ul class="list-disc list-inside space-y-1 ml-4">
+                                            <li>Transfer Bank (BCA, BRI, BNI, Mandiri)</li>
+                                            <li>E-Wallet (OVO, DANA, GoPay, ShopeePay)</li>
+                                            <li>QRIS</li>
+                                        </ul>
+                                        <p><strong>Via Shopee:</strong></p>
+                                        <ul class="list-disc list-inside space-y-1 ml-4">
+                                            <li>ShopeePay</li>
+                                            <li>Transfer Bank</li>
+                                            <li>COD (Cash on Delivery)</li>
+                                            <li>Kartu Kredit/Debit</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-lg shadow-lg">
+                            <button onclick="toggleFAQ('faq9')" class="w-full text-left p-6 focus:outline-none">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="text-lg font-bold text-gray-800">💰 Kenapa harga di Lynk.id lebih murah?</h3>
+                                    <span id="faq9-icon" class="text-2xl text-primary">+</span>
+                                </div>
+                            </button>
+                            <div id="faq9" class="hidden px-6 pb-6">
+                                <div class="border-t pt-4">
+                                    <p class="text-gray-700">Harga di Lynk.id lebih murah karena tidak ada biaya admin tambahan. Sedangkan di Shopee, ada biaya admin sekitar 7% yang dibebankan ke harga produk. Kami merekomendasikan pembelian via Lynk.id untuk harga terbaik.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-lg shadow-lg">
+                            <button onclick="toggleFAQ('faq10')" class="w-full text-left p-6 focus:outline-none">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="text-lg font-bold text-gray-800">🧾 Apakah ada bukti pembayaran/invoice?</h3>
+                                    <span id="faq10-icon" class="text-2xl text-primary">+</span>
+                                </div>
+                            </button>
+                            <div id="faq10" class="hidden px-6 pb-6">
+                                <div class="border-t pt-4">
+                                    <p class="text-gray-700">Ya, setiap transaksi akan mendapat invoice/bukti pembayaran digital. Untuk pembelian via Lynk.id atau Shopee, bukti pembayaran otomatis tersedia di platform masing-masing. Kami juga akan mengirim konfirmasi pembayaran via WhatsApp.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kebijakan FAQ -->
+                <div id="kebijakanFAQContent" class="faq-content hidden">
+                    <div class="space-y-4">
+                        <div class="bg-white rounded-lg shadow-lg">
+                            <button onclick="toggleFAQ('faq11')" class="w-full text-left p-6 focus:outline-none">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="text-lg font-bold text-gray-800">🔄 Apakah bisa refund/return?</h3>
+                                    <span id="faq11-icon" class="text-2xl text-primary">+</span>
+                                </div>
+                            </button>
+                            <div id="faq11" class="hidden px-6 pb-6">
+                                <div class="border-t pt-4">
+                                    <div class="space-y-2 text-gray-700">
+                                        <p><strong>Kebijakan Refund:</strong></p>
+                                        <ul class="list-disc list-inside space-y-1">
+                                            <li><strong>Produk Custom (KTM):</strong> Tidak dapat di-refund karena sudah disesuaikan dengan data personal</li>
+                                            <li><strong>Produk Ready Stock:</strong> Dapat di-refund jika ada kesalahan dari pihak kami</li>
+                                            <li><strong>Jasa Konsultasi:</strong> Dapat di-refund jika belum dimulai sesi konsultasi</li>
+                                        </ul>
+                                        <p class="text-sm text-red-600 mt-2"><strong>*Refund hanya berlaku jika ada kesalahan dari pihak kami</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-lg shadow-lg">
+                            <button onclick="toggleFAQ('faq12')" class="w-full text-left p-6 focus:outline-none">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="text-lg font-bold text-gray-800">🛡️ Bagaimana jika produk rusak/cacat?</h3>
+                                    <span id="faq12-icon" class="text-2xl text-primary">+</span>
+                                </div>
+                            </button>
+                            <div id="faq12" class="hidden px-6 pb-6">
+                                <div class="border-t pt-4">
+                                    <div class="space-y-2 text-gray-700">
+                                        <p><strong>Garansi Kualitas:</strong></p>
+                                        <ul class="list-disc list-inside space-y-1">
+                                            <li>Jika produk rusak/cacat karena kesalahan produksi, kami akan ganti gratis</li>
+                                            <li>Laporkan dalam 24 jam setelah produk diterima</li>
+                                            <li>Sertakan foto/video sebagai bukti</li>
+                                            <li>Produk pengganti akan dikirim tanpa biaya tambahan</li>
+                                        </ul>
+                                        <p class="text-sm text-green-600 mt-2"><strong>*Kami berkomitmen memberikan produk berkualitas terbaik</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-lg shadow-lg">
+                            <button onclick="toggleFAQ('faq13')" class="w-full text-left p-6 focus:outline-none">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="text-lg font-bold text-gray-800">📞 Bagaimana cara menghubungi customer service?</h3>
+                                    <span id="faq13-icon" class="text-2xl text-primary">+</span>
+                                </div>
+                            </button>
+                            <div id="faq13" class="hidden px-6 pb-6">
+                                <div class="border-t pt-4">
+                                    <div class="space-y-2 text-gray-700">
+                                        <p><strong>Kontak Customer Service:</strong></p>
+                                        <ul class="list-disc list-inside space-y-1">
+                                            <li><strong>WhatsApp:</strong> 081298227738 (Respon cepat)</li>
+                                            <li><strong>Email:</strong> gipsinovation@gmail.com</li>
+                                            <li><strong>Instagram:</strong> @ubsi.story</li>
+                                        </ul>
+                                        <p><strong>Jam Operasional:</strong></p>
+                                        <ul class="list-disc list-inside space-y-1">
+                                            <li>Senin-Jumat: 08.00-16.00 WIB</li>
+                                            <li>Sabtu: 08.00-14.00 WIB</li>
+                                            <li>Minggu & Hari Libur: Tutup</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div id="productModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-2xl w-full max-h-screen overflow-y-auto slide-in">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 id="modalTitle" class="text-2xl font-bold"></h3>
+                    <button onclick="closeModal()" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+                </div>
+                <div id="modalContent"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Tracking Page -->
+    <div id="trackingPage" class="page hidden">
+        <div class="container mx-auto px-4 py-8">
+            <h2 class="text-3xl font-bold mb-8 text-gray-800 text-center">Tracking Pesanan</h2>
+            <p class="text-center text-gray-600 mb-12">Cek status pesanan Anda dengan memasukkan nomor pesanan</p>
+            
+            <div class="max-w-2xl mx-auto">
+                <!-- CekResi.com Direct Tracking -->
+                <div class="bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg shadow-lg p-8 mb-8 text-white">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold mb-2">🚚 Lacak Paket Langsung</h3>
+                        <p class="text-blue-100">Sudah punya nomor resi? Lacak paket Anda langsung di CekResi.com</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-6">
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <input type="text" id="directResiInput" placeholder="Masukkan nomor resi..." class="flex-1 border rounded-lg px-4 py-3 text-gray-800 focus:ring-2 focus:ring-blue-300 focus:border-transparent">
+                            <button onclick="trackDirectResi()" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-bold whitespace-nowrap">
+                                🔍 Lacak di CekResi.com
+                            </button>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-2">Contoh: JNE7820230145, TIKI230187456, J&T123456789</p>
+                    </div>
+                    
+                    <div class="text-center mt-4">
+                        <p class="text-sm text-blue-100">Atau gunakan form di bawah untuk tracking pesanan UBSI Store</p>
+                    </div>
+                </div>
+
+                <!-- Tracking Form -->
+                <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+                    <form id="trackingForm" class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Nomor Pesanan / Order ID:</label>
+                            <input type="text" id="orderIdInput" required class="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Contoh: ORD-20250101-001">
+                            <p class="text-sm text-gray-600 mt-1">Nomor pesanan dapat ditemukan di email konfirmasi atau chat WhatsApp</p>
+                        </div>
+                        <button type="submit" class="w-full bg-primary text-white py-3 rounded-lg hover:bg-green-700 transition-colors font-bold">
+                            🔍 Cek Status Pesanan
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Tracking Result -->
+                <div id="trackingResult" class="hidden">
+                    <div class="bg-white rounded-lg shadow-lg p-8">
+                        <div class="text-center mb-6">
+                            <div id="orderStatus" class="text-2xl font-bold mb-2"></div>
+                            <div id="orderInfo" class="text-gray-600"></div>
+                        </div>
+                        
+                        <!-- Progress Steps -->
+                        <div class="relative">
+                            <div class="flex justify-between items-center mb-8">
+                                <div class="flex flex-col items-center">
+                                    <div id="step1" class="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center text-white font-bold mb-2">1</div>
+                                    <span class="text-sm text-center">Pesanan<br>Diterima</span>
+                                </div>
+                                <div class="flex-1 h-1 bg-gray-300 mx-2" id="line1"></div>
+                                <div class="flex flex-col items-center">
+                                    <div id="step2" class="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center text-white font-bold mb-2">2</div>
+                                    <span class="text-sm text-center">Sedang<br>Diproses</span>
+                                </div>
+                                <div class="flex-1 h-1 bg-gray-300 mx-2" id="line2"></div>
+                                <div class="flex flex-col items-center">
+                                    <div id="step3" class="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center text-white font-bold mb-2">3</div>
+                                    <span class="text-sm text-center">Siap<br>Dikirim</span>
+                                </div>
+                                <div class="flex-1 h-1 bg-gray-300 mx-2" id="line3"></div>
+                                <div class="flex flex-col items-center">
+                                    <div id="step4" class="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center text-white font-bold mb-2">4</div>
+                                    <span class="text-sm text-center">Selesai</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Order Details -->
+                        <div id="orderDetails" class="border-t pt-6">
+                            <!-- Details will be populated by JavaScript -->
+                        </div>
+
+                        <!-- Contact Admin -->
+                        <div class="bg-blue-50 rounded-lg p-4 mt-6">
+                            <h4 class="font-bold text-blue-800 mb-2">📞 Butuh Bantuan?</h4>
+                            <p class="text-sm text-blue-700 mb-3">Jika ada pertanyaan tentang pesanan Anda, silakan hubungi admin kami:</p>
+                            <div class="flex space-x-2">
+                                <button onclick="openWhatsAppTracking()" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors text-sm font-bold">
+                                    💬 Chat Admin
+                                </button>
+                                <button onclick="copyOrderId()" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors text-sm font-bold">
+                                    📋 Copy Order ID
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Orders from Google Sheets -->
+                <div id="liveOrdersSection" class="bg-gradient-to-r from-green-500 to-green-600 rounded-lg shadow-lg p-8 mt-8 text-white">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold mb-2">📊 Data Pesanan Real-Time</h3>
+                        <p class="text-green-100">Data langsung dari Google Sheets - Update otomatis setiap 30 detik</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h4 class="text-lg font-bold text-gray-800">📋 Daftar Pesanan Terbaru</h4>
+                            <div class="flex items-center space-x-2">
+                                <div id="connectionStatus" class="px-2 py-1 rounded text-xs font-bold bg-green-100 text-green-800">
+                                    🟢 Live Data
+                                </div>
+                                <div id="loadingIndicator" class="hidden">
+                                    <div class="animate-spin rounded-full h-4 w-4 border-b-2 border-green-600"></div>
+                                </div>
+                                <button onclick="refreshLiveOrders()" class="bg-green-600 text-white px-3 py-1 rounded text-sm hover:bg-green-700 transition-colors">
+                                    🔄 Refresh
+                                </button>
+                                <span id="lastUpdate" class="text-xs text-gray-500"></span>
+                            </div>
+                        </div>
+                        
+                        <div id="liveOrdersList" class="space-y-3">
+                            <div class="text-center py-8 text-gray-500">
+                                <div class="animate-pulse">📡 Memuat data pesanan...</div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 p-3 bg-blue-50 rounded-lg border border-blue-200">
+                            <p class="text-sm text-blue-800 font-medium mb-2">💡 Cara Tracking:</p>
+                            <ol class="text-xs text-blue-700 space-y-1 list-decimal list-inside">
+                                <li>Cari Order ID Anda di daftar di atas</li>
+                                <li>Klik tombol "Track" untuk melihat detail status</li>
+                                <li>Jika ada nomor resi, klik untuk tracking pengiriman langsung</li>
+                                <li>Atau masukkan Order ID di form tracking di atas</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sample Orders for Demo -->
+                <div class="bg-accent rounded-lg p-6 mt-8">
+                    <h3 class="text-lg font-bold text-primary mb-4">🎯 Demo Tracking</h3>
+                    <p class="text-sm text-primary mb-4">Coba tracking dengan nomor pesanan demo berikut:</p>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-white rounded-lg p-4">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <p class="font-bold text-sm">ORD-20250101-001</p>
+                                    <p class="text-xs text-gray-600">KTM Custom - Selesai</p>
+                                </div>
+                                <button onclick="trackDemo('ORD-20250101-001')" class="bg-primary text-white px-3 py-1 rounded text-xs hover:bg-green-700 transition-colors">
+                                    Track
+                                </button>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg p-4">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <p class="font-bold text-sm">ORD-20250101-002</p>
+                                    <p class="text-xs text-gray-600">Kaos Semot - Diproses</p>
+                                </div>
+                                <button onclick="trackDemo('ORD-20250101-002')" class="bg-primary text-white px-3 py-1 rounded text-xs hover:bg-green-700 transition-colors">
+                                    Track
+                                </button>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg p-4">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <p class="font-bold text-sm">ORD-20250101-003</p>
+                                    <p class="text-xs text-gray-600">Papermop - Siap Kirim</p>
+                                </div>
+                                <button onclick="trackDemo('ORD-20250101-003')" class="bg-primary text-white px-3 py-1 rounded text-xs hover:bg-green-700 transition-colors">
+                                    Track
+                                </button>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg p-4">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <p class="font-bold text-sm">ORD-20250101-004</p>
+                                    <p class="text-xs text-gray-600">Konsultasi - Menunggu</p>
+                                </div>
+                                <button onclick="trackDemo('ORD-20250101-004')" class="bg-primary text-white px-3 py-1 rounded text-xs hover:bg-green-700 transition-colors">
+                                    Track
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Page -->
+    <div id="aboutPage" class="page hidden">
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-r from-primary to-green-600 text-white py-16">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-4xl font-bold mb-4">Tentang Kami</h2>
+                <p class="text-xl">Kami sudah menjual perlengkapan semot dan ormik sejak september 2018 hingga saat ini. Silahkan kunjungi shopee dan instagram kami untuk melihat track record.</p>
+            </div>
+        </section>
+
+        <!-- About Content -->
+        <section class="py-16">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-12">
+                        <h3 class="text-3xl font-bold mb-6 text-gray-800">Merchandise UBSI</h3>
+                        <div class="space-y-4 text-lg text-gray-700">
+                            <p>Kami adalah tim merchandise kampus yang bertanggung jawab untuk menyediakan berbagai produk berkualitas untuk seluruh civitas akademika.</p>
+                            <p>Semua produk kami dibuat dengan bahan berkualitas tinggi dan desain eksklusif yang mencerminkan identitas kampus.</p>
+                            <p>Dengan belanja di toko kami, Anda turut mendukung kegiatan kemahasiswaan dan pengembangan fasilitas kampus.</p>
+                        </div>
+                    </div>
+
+                    <!-- Features -->
+                    <div class="grid md:grid-cols-2 gap-8 mb-16">
+                        <div class="bg-white rounded-lg shadow-lg p-8 text-center">
+                            <div class="text-4xl mb-4">⭐</div>
+                            <h4 class="text-xl font-bold mb-2">Kualitas Terbaik</h4>
+                            <p class="text-gray-600">Bahan premium & tahan lama</p>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg p-8 text-center">
+                            <div class="text-4xl mb-4">🚚</div>
+                            <h4 class="text-xl font-bold mb-2">Pengiriman Cepat</h4>
+                            <p class="text-gray-600">Sampai dalam 1-3 hari</p>
+                        </div>
+                    </div>
+
+                    <!-- Special Offer -->
+                    <div class="bg-accent rounded-lg p-8 text-center">
+                        <h4 class="text-2xl font-bold text-primary mb-4">Promo Spesial!</h4>
+                        <p class="text-lg text-primary font-semibold">Minimal pembelian 10 pcs gratis 1 pcs ID Card KTM Full Set</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contactPage" class="page hidden">
+        <div class="container mx-auto px-4 py-8">
+            <h2 class="text-3xl font-bold mb-8 text-gray-800 text-center">Hubungi Kami</h2>
+            <p class="text-center text-gray-600 mb-12">Ada pertanyaan? Silakan hubungi kami melalui form berikut</p>
+            
+            <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <!-- Contact Form -->
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Nama Lengkap*</label>
+                            <input type="text" required class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Email*</label>
+                            <input type="email" required class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Subjek*</label>
+                            <input type="text" required class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Pesan*</label>
+                            <textarea required rows="5" class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary text-white py-3 rounded-lg hover:bg-green-700 transition-colors font-bold">
+                            Kirim Pesan
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <div class="bg-white rounded-lg shadow-lg p-8">
+                        <h3 class="text-xl font-bold mb-6">Informasi Kontak</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-3">
+                                <div class="text-primary text-xl">📍</div>
+                                <div>
+                                    <h4 class="font-bold">Alamat</h4>
+                                    <p class="text-gray-600">Walantaka, Serang, Banten</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <div class="text-primary text-xl">📧</div>
+                                <div>
+                                    <h4 class="font-bold">Email</h4>
+                                    <p class="text-gray-600">gipsinovation@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <div class="text-primary text-xl">📱</div>
+                                <div>
+                                    <h4 class="font-bold">WhatsApp</h4>
+                                    <p class="text-gray-600">081298227738</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <div class="text-primary text-xl">📷</div>
+                                <div>
+                                    <h4 class="font-bold">Instagram</h4>
+                                    <a href="https://instagram.com/ubsi.story" target="_blank" class="text-primary hover:text-green-700 transition-colors">@ubsi.story</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-lg p-8">
+                        <h3 class="text-xl font-bold mb-6">Jam Operasional</h3>
+                        <div class="space-y-2 text-gray-700">
+                            <p><span class="font-semibold">Senin-Jumat:</span> 08.00-16.00 WIB</p>
+                            <p><span class="font-semibold">Sabtu:</span> 08.00-14.00 WIB</p>
+                            <p><span class="font-semibold">Minggu & Hari Libur:</span> Tutup</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Page -->
+    <div id="adminPage" class="page hidden">
+        <div id="adminLogin" class="container mx-auto px-4 py-16 max-w-md">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-2xl font-bold mb-6 text-center">Login Admin</h2>
+                <form id="adminLoginForm">
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium mb-2">Username</label>
+                        <input type="text" id="adminUsername" required class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary focus:border-transparent">
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium mb-2">Password</label>
+                        <input type="password" id="adminPassword" required class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary focus:border-transparent">
+                    </div>
+                    <button type="submit" class="w-full bg-primary text-white py-2 rounded-lg hover:bg-green-700 transition-colors">
+                        Login
+                    </button>
+                </form>
+                <p class="text-sm text-gray-600 mt-4 text-center">Demo: admin / admin123</p>
+            </div>
+        </div>
+
+        <div id="adminDashboard" class="hidden container mx-auto px-4 py-8">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-800">Dashboard Admin</h2>
+                <button onclick="adminLogout()" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors">
+                    Logout
+                </button>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-lg font-bold text-gray-600">Total Pesanan</h3>
+                    <p id="totalOrders" class="text-3xl font-bold text-primary">0</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-lg font-bold text-gray-600">Pesanan Hari Ini</h3>
+                    <p id="todayOrders" class="text-3xl font-bold text-accent">0</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-lg font-bold text-gray-600">Total Pendapatan</h3>
+                    <p id="totalRevenue" class="text-3xl font-bold text-green-600">Rp 0</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg">
+                <div class="p-6 border-b">
+                    <h3 class="text-xl font-bold">Daftar Pesanan</h3>
+                </div>
+                <div id="ordersList" class="p-6"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global variables
+        let orders = JSON.parse(localStorage.getItem('orders')) || [];
+        let isAdminLoggedIn = false;
+        let liveOrders = [];
+        let refreshInterval;
+
+        // Google Sheets configuration
+        const SHEET_ID = '10KPK0ZZxbRk6pOdiv34hncoI58vM7LjztiwjsC26jnA';
+        const SHEET_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=Sheet1`;
+
+        // Products data
+        const products = {
+            portfolio: {
+                name: 'Creative Portofolio Personal Branding',
+                price: 25500,
+                originalPrice: 35500,
+                emoji: '💼',
+                link: 'https://lynk.id/ubsi.story/mn409po228ee',
+                description: 'Template portofolio digital untuk personal branding mahasiswa dan pekerja. Cocok untuk menonjolkan value diri ke recruiter'
+            },
+            kaos: {
+                name: 'Baju Semot UBSI 2025',
+                price: 78000,
+                originalPrice: 120000,
+                emoji: '👕',
+                link: 'http://lynk.id/ubsi.story/yvnyd7lkky3o',
+                shopeeLink: 'https://s.shopee.co.id/30do1wlSNf',
+                description: 'Kaos resmi Semot UBSI 2025 dengan berbagai ukuran',
+                featured: true
+            },
+            papermob: {
+                name: 'Papermop Semot 2025',
+                price: 40000,
+                originalPrice: 70000,
+                emoji: '📄',
+                link: 'http://lynk.id/ubsi.story/ooydpok6r6ol',
+                shopeeLink: 'https://s.shopee.co.id/6AapnmvPNv',
+                description: 'Paper Mop resmi Semot 2025 dengan desain sesuai ketentuan pelaksanaan Semot',
+                featured: true
+            },
+            nametag: {
+                name: 'Name Tag Semot UBSI 2025',
+                price: 15000,
+                originalPrice: 20000,
+                emoji: '🏷️',
+                link: 'http://lynk.id/ubsi.story/9qm9d33m3x2o',
+                shopeeLink: 'https://s.shopee.co.id/9UrHlvdmII',
+                description: 'Name tag resmi Semot UBSI 2025',
+                featured: true
+            },
+            ktm: {
+                name: 'KTM Mahasiswa UBSI',
+                price: 15000,
+                originalPrice: 35000,
+                emoji: '🆔',
+                link: 'http://lynk.id/ubsi.story/687mkvmnn6pp',
+                shopeeLink: 'https://s.shopee.co.id/1g8QRYOJQQ',
+                description: 'KTM mahasiswa UBSI dengan desain custom',
+                templates: ['KTM UBSI', 'NAME TAG SEMOT', 'Custom Design'],
+                customForm: true,
+                featured: true
+            },
+            konsultasi_portfolio: {
+                name: 'Konsultasi Portofolio',
+                price: 99000,
+                originalPrice: 150000,
+                emoji: '📋',
+                link: 'http://lynk.id/ubsi.story/v5jrkgg1ejqv',
+                description: 'Konsultasi untuk pengembangan dan perbaikan portofolio Anda'
+            },
+            konsultasi_1bab: {
+                name: 'Konsultasi Tugas Akhir & Skripsi 1 Bab / 1 Jam',
+                price: 99000,
+                originalPrice: 150000,
+                emoji: '📚',
+                link: 'http://lynk.id/ubsi.story/795xnwd0q52x',
+                description: 'Konsultasi intensif untuk tugas akhir dan skripsi per bab'
+            },
+            konsultasi_3bab: {
+                name: 'Konsultasi Tugas Akhir & Skripsi 3 Bab (Proposal)',
+                price: 350000,
+                originalPrice: 450000,
+                emoji: '📖',
+                link: 'http://lynk.id/ubsi.story/745qxmk0pod4',
+                description: 'Konsultasi lengkap untuk proposal skripsi 3 bab'
+            },
+            pendampingan_full: {
+                name: 'Pendampingan Skripsi Full + Simulasi Sidang',
+                price: 999000,
+                originalPrice: 1200000,
+                emoji: '🎓',
+                link: 'http://lynk.id/ubsi.story/4e7gnrw807d3',
+                description: 'Pendampingan penuh dari awal hingga sidang skripsi'
+            },
+            print_skripsi: {
+                name: 'Jasa Print Tugas & Hard Cover Skripsi',
+                price: 1000,
+                originalPrice: 1500,
+                emoji: '🖨️',
+                link: 'http://lynk.id/ubsi.story/yj0vxzp520ez',
+                description: 'Jasa cetak dan hard cover untuk tugas dan skripsi'
+            }
+        };
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            showPage('home');
+            loadProducts();
+            loadLiveOrders();
+            startAutoRefresh();
+        });
+
+        // Load products dynamically
+        function loadProducts() {
+            const productsGrid = document.getElementById('productsGrid');
+            let html = '';
+            
+            Object.entries(products).forEach(([key, product]) => {
+                const priceDisplay = `Rp ${product.price.toLocaleString('id-ID')}`;
+                const originalPriceDisplay = product.originalPrice ? 
+                    `<span class="text-sm text-gray-500 line-through mr-2">Rp ${product.originalPrice.toLocaleString('id-ID')}</span>` : '';
+                
+                html += `
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        ${product.featured ? '<div class="bg-accent text-primary text-center py-1 text-sm font-bold">⭐ PRODUK UNGGULAN 2025</div>' : ''}
+                        <div class="h-64 bg-gradient-to-br from-primary to-green-400 flex items-center justify-center">
+                            <span class="text-8xl">${product.emoji}</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">${product.name}</h3>
+                            <p class="text-gray-600 mb-4">${product.description}</p>
+                            <div class="mb-4">
+                                ${originalPriceDisplay}
+                                <span class="text-2xl font-bold text-primary">${priceDisplay}</span>
+                            </div>
+                            ${product.customForm ? 
+                                `<button onclick="showProductDetail('${key}')" class="w-full bg-accent text-primary py-2 rounded-lg hover:bg-yellow-400 transition-colors font-bold mb-2">
+                                    Custom Order
+                                </button>` : ''
+                            }
+                            ${product.shopeeLink ? 
+                                `<div class="space-y-2">
+                                    <button onclick="showPurchaseOptions('${key}')" class="w-full bg-primary text-white py-2 rounded-lg hover:bg-green-700 transition-colors">
+                                        Beli Sekarang
+                                    </button>
+                                </div>` :
+                                `<button onclick="window.open('${product.link}', '_blank')" class="w-full bg-primary text-white py-2 rounded-lg hover:bg-green-700 transition-colors">
+                                    Beli Sekarang
+                                </button>`
+                            }
+                        </div>
+                    </div>
+                `;
+            });
+            
+            productsGrid.innerHTML = html;
+        }
+
+        // Page navigation
+        function showPage(page) {
+            document.querySelectorAll('.page').forEach(p => p.classList.add('hidden'));
+            document.getElementById(page + 'Page').classList.remove('hidden');
+            
+            // Handle tracking page auto-refresh
+            if (page === 'tracking') {
+                if (!refreshInterval) {
+                    startAutoRefresh();
+                }
+                loadLiveOrders(); // Refresh data when entering tracking page
+            } else {
+                // Stop auto-refresh when leaving tracking page to save resources
+                if (page !== 'tracking' && refreshInterval) {
+                    stopAutoRefresh();
+                }
+            }
+            
+            if (page === 'admin') {
+                if (isAdminLoggedIn) {
+                    document.getElementById('adminLogin').classList.add('hidden');
+                    document.getElementById('adminDashboard').classList.remove('hidden');
+                    loadAdminData();
+                } else {
+                    document.getElementById('adminLogin').classList.remove('hidden');
+                    document.getElementById('adminDashboard').classList.add('hidden');
+                }
+            }
+        }
+
+        // Product detail modal (only for KTM)
+        function showProductDetail(productType) {
+            if (productType !== 'ktm') return;
+            
+            const product = products[productType];
+            const modal = document.getElementById('productModal');
+            const title = document.getElementById('modalTitle');
+            const content = document.getElementById('modalContent');
+
+            title.textContent = product.name;
+            
+            let html = `
+                <div class="text-center mb-6">
+                    <div class="text-8xl mb-4">${product.emoji}</div>
+                    <p class="text-2xl font-bold text-primary">${product.price}</p>
+                </div>
+                <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                    <h4 class="font-bold text-blue-800 mb-2">Custom KTM Mahasiswa UBSI</h4>
+                    <p class="text-sm text-blue-700">Silakan isi form berikut untuk pemesanan KTM custom Anda</p>
+                </div>
+                <form id="ktmForm" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Pilih Template:</label>
+                        <select name="template" required class="w-full border rounded-lg px-3 py-2">
+                            <option value="">-- Pilih Template --</option>
+                            ${product.templates.map(template => `<option value="${template}">${template}</option>`).join('')}
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">NAMA LENGKAP:</label>
+                        <input type="text" name="fullName" required class="w-full border rounded-lg px-3 py-2" placeholder="NAMA LENGKAP ANDA" style="text-transform: uppercase;">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">NIM:</label>
+                        <input type="text" name="nim" required class="w-full border rounded-lg px-3 py-2" placeholder="123456789">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">S1/D3 | JURUSAN | ASAL KAMPUS:</label>
+                        <input type="text" name="prodi" required class="w-full border rounded-lg px-3 py-2" placeholder="S1 | Teknik Informatika | UBSI Serang">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Preview Pas Foto (Opsional):</label>
+                        <input type="file" name="photo" accept="image/*" class="w-full border rounded-lg px-3 py-2">
+                        <div id="photoPreview" class="mt-2 hidden">
+                            <img id="previewImage" class="w-32 h-40 object-cover border rounded-lg">
+                        </div>
+                        <p class="text-sm text-red-600 mt-1 font-medium">⚠️ PENTING: Foto ini hanya untuk preview. Anda WAJIB kirim foto asli via WhatsApp!</p>
+                        <p class="text-sm text-gray-600 mt-1">Format: JPG, PNG - Foto formal dengan latar belakang putih</p>
+                    </div>
+                    <div class="bg-red-50 p-4 rounded-lg border border-red-200">
+                        <h4 class="font-bold text-red-800 mb-2">📸 CARA KIRIM FOTO:</h4>
+                        <ol class="text-sm text-red-700 space-y-1 list-decimal list-inside">
+                            <li>Isi form ini untuk copy data diri</li>
+                            <li>Klik "Kirim Data via WhatsApp"</li>
+                            <li>Copy & paste data diri ke WhatsApp</li>
+                            <li><strong>KIRIM FOTO PAS LANGSUNG VIA WHATSAPP</strong></li>
+                            <li>Tunggu konfirmasi admin</li>
+                            <li>Lanjut beli via link yang diberikan</li>
+                        </ol>
+                    </div>
+                    <div class="flex space-x-4 pt-4">
+                        <button type="button" onclick="sendKTMData()" class="flex-1 bg-accent text-primary py-2 rounded-lg hover:bg-yellow-400 transition-colors font-bold">
+                            Kirim Data via WhatsApp
+                        </button>
+                        <button type="button" onclick="window.open('${product.link}', '_blank')" class="flex-1 bg-primary text-white py-2 rounded-lg hover:bg-green-700 transition-colors">
+                            Beli Sekarang
+                        </button>
+                    </div>
+                </form>
+            `;
+
+            content.innerHTML = html;
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('productModal').classList.add('hidden');
+        }
+
+        // Send KTM data via WhatsApp
+        function sendKTMData() {
+            const form = document.getElementById('ktmForm');
+            const formData = new FormData(form);
+            
+            // Remove photo requirement check since it's sent via WhatsApp
+            const requiredFields = ['template', 'fullName', 'nim', 'prodi'];
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                const input = form.querySelector(`[name="${field}"]`);
+                if (!input.value.trim()) {
+                    input.focus();
+                    alert(`Mohon isi ${field === 'fullName' ? 'Nama Lengkap' : field === 'prodi' ? 'Program Studi' : field}`);
+                    isValid = false;
+                    return;
+                }
+            });
+            
+            if (!isValid) return;
+
+            // Show modal with message template
+            showMessageTemplate(formData);
+        }
+
+        // Handle photo preview
+        document.addEventListener('change', function(e) {
+            if (e.target.name === 'photo') {
+                const file = e.target.files[0];
+                
+                // Handle modal form photo preview
+                const preview = document.getElementById('photoPreview');
+                const previewImage = document.getElementById('previewImage');
+                
+                // Handle quick form photo preview
+                const quickPreview = document.getElementById('quickPhotoPreview');
+                const quickPreviewImage = document.getElementById('quickPreviewImage');
+                
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        // Update modal preview if exists
+                        if (previewImage) {
+                            previewImage.src = e.target.result;
+                            preview.classList.remove('hidden');
+                        }
+                        
+                        // Update quick form preview if exists
+                        if (quickPreviewImage) {
+                            quickPreviewImage.src = e.target.result;
+                            quickPreview.classList.remove('hidden');
+                        }
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    // Hide previews
+                    if (preview) preview.classList.add('hidden');
+                    if (quickPreview) quickPreview.classList.add('hidden');
+                }
+            }
+        });
+
+        function showMessageTemplate(formData) {
+            const modal = document.getElementById('productModal');
+            const title = document.getElementById('modalTitle');
+            const content = document.getElementById('modalContent');
+
+            title.textContent = 'Kirim Data via WhatsApp';
+            
+            const message = `${formData.get('fullName')}\n${formData.get('nim')}\n${formData.get('prodi')}`;
+            
+            let html = `
+                <div class="space-y-6">
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h4 class="font-bold text-blue-800 mb-2">Langkah Selanjutnya:</h4>
+                        <ol class="text-sm text-blue-700 space-y-2 list-decimal list-inside">
+                            <li>Copy pesan di bawah ini</li>
+                            <li>Klik tombol "Buka WhatsApp"</li>
+                            <li>Paste pesan yang sudah dicopy</li>
+                            <li>Kirim pas foto Anda</li>
+                            <li>Tunggu konfirmasi dari admin</li>
+                            <li>Lanjutkan pembelian melalui link yang diberikan</li>
+                        </ol>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Template: ${formData.get('template')}</label>
+                        <label class="block text-sm font-medium mb-2">Copy pesan berikut:</label>
+                        <textarea id="messageTemplate" readonly class="w-full border rounded-lg px-3 py-2 h-24 bg-gray-50" onclick="this.select()">${message}</textarea>
+                        <p class="text-xs text-gray-600 mt-1">Klik pada kotak pesan untuk select semua, lalu copy (Ctrl+C)</p>
+                    </div>
+                    
+                    <div class="bg-red-50 p-4 rounded-lg border border-red-200">
+                        <p class="text-sm text-red-800 font-bold mb-2">
+                            📸 WAJIB: Kirim Pas Foto via WhatsApp!
+                        </p>
+                        <ul class="text-sm text-red-700 space-y-1 list-disc list-inside">
+                            <li>Setelah kirim pesan di atas, langsung kirim foto pas Anda</li>
+                            <li>Format: JPG/PNG, latar putih, foto formal</li>
+                            <li>Ukuran file maksimal 5MB</li>
+                            <li>Foto harus jelas dan tidak blur</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <button onclick="copyMessage()" class="w-full bg-accent text-primary py-2 rounded-lg hover:bg-yellow-400 transition-colors font-bold">
+                            📋 Copy Pesan
+                        </button>
+                        
+                        <div class="grid grid-cols-2 gap-2">
+                            <button onclick="openWhatsAppWeb()" class="bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition-colors font-bold text-sm">
+                                💻 WA Web
+                            </button>
+                            <button onclick="openWhatsAppMobile()" class="bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition-colors font-bold text-sm">
+                                📱 WA Mobile
+                            </button>
+                        </div>
+                        
+                        <div class="bg-green-50 p-3 rounded-lg">
+                            <p class="text-sm text-green-800 font-medium mb-2">Manual WhatsApp:</p>
+                            <div class="flex items-center space-x-2 mb-2">
+                                <span class="text-xs text-green-700">Nomor:</span>
+                                <span id="phoneNumber" class="font-mono bg-white px-2 py-1 rounded text-sm">081298227738</span>
+                                <button onclick="copyPhoneNumber()" class="bg-green-600 text-white px-2 py-1 rounded text-xs hover:bg-green-700 transition-colors">
+                                    📋 Salin
+                                </button>
+                            </div>
+                            <p class="text-xs text-green-700">Copy pesan di atas, lalu buka WhatsApp dan kirim ke nomor tersebut</p>
+                        </div>
+                    </div>
+                    
+                    <button onclick="closeModal()" class="w-full bg-gray-500 text-white py-2 rounded-lg hover:bg-gray-600 transition-colors">
+                        Tutup
+                    </button>
+                </div>
+            `;
+
+            content.innerHTML = html;
+        }
+
+        function copyMessage() {
+            const textarea = document.getElementById('messageTemplate');
+            textarea.select();
+            document.execCommand('copy');
+            
+            // Show feedback
+            const button = event.target;
+            const originalText = button.innerHTML;
+            button.innerHTML = '✅ Tersalin!';
+            button.classList.add('bg-green-500', 'text-white');
+            button.classList.remove('bg-accent', 'text-primary');
+            
+            setTimeout(() => {
+                button.innerHTML = originalText;
+                button.classList.remove('bg-green-500', 'text-white');
+                button.classList.add('bg-accent', 'text-primary');
+            }, 2000);
+        }
+
+        function openWhatsAppWeb() {
+            const whatsappUrl = `https://web.whatsapp.com/send?phone=6281298227738`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        function openWhatsAppMobile() {
+            const whatsappUrl = `https://api.whatsapp.com/send?phone=6281298227738`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        function copyPhoneNumber() {
+            const phoneNumber = '081298227738';
+            
+            // Create temporary textarea to copy text
+            const textarea = document.createElement('textarea');
+            textarea.value = phoneNumber;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            
+            // Show feedback
+            const button = event.target;
+            const originalText = button.innerHTML;
+            button.innerHTML = '✅ Tersalin!';
+            button.classList.add('bg-green-800');
+            button.classList.remove('bg-green-600');
+            
+            setTimeout(() => {
+                button.innerHTML = originalText;
+                button.classList.remove('bg-green-800');
+                button.classList.add('bg-green-600');
+            }, 2000);
+        }
+
+        // Show purchase options modal
+        function showPurchaseOptions(productKey) {
+            const product = products[productKey];
+            const modal = document.getElementById('productModal');
+            const title = document.getElementById('modalTitle');
+            const content = document.getElementById('modalContent');
+
+            title.textContent = 'Pilih Platform Pembelian';
+            
+            let html = `
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">${product.emoji}</div>
+                    <h4 class="text-xl font-bold mb-2">${product.name}</h4>
+                    <div class="mb-4">
+                        ${product.originalPrice ? `<span class="text-sm text-gray-500 line-through mr-2">Rp ${product.originalPrice.toLocaleString('id-ID')}</span>` : ''}
+                        <span class="text-2xl font-bold text-primary">Rp ${product.price.toLocaleString('id-ID')}</span>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+                        <h4 class="font-bold text-green-800 mb-2">💰 Lynk.id (Harga Terbaik)</h4>
+                        <p class="text-sm text-green-700 mb-3">Harga lebih murah tanpa biaya admin tambahan</p>
+                        <button onclick="window.open('${product.link}', '_blank')" class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition-colors font-bold">
+                            Beli di Lynk.id
+                        </button>
+                    </div>
+                    
+                    <div class="bg-orange-50 p-4 rounded-lg border border-orange-200">
+                        <h4 class="font-bold text-orange-800 mb-2">🛒 Shopee</h4>
+                        <p class="text-sm text-orange-700 mb-1">Harga sedikit lebih tinggi karena biaya admin Shopee 7%</p>
+                        <p class="text-xs text-orange-600 mb-3">Estimasi: Rp ${Math.round(product.price * 1.07).toLocaleString('id-ID')}</p>
+                        <button onclick="window.open('${product.shopeeLink}', '_blank')" class="w-full bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition-colors font-bold">
+                            Beli di Shopee
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <button onclick="closeModal()" class="text-gray-500 hover:text-gray-700 underline">
+                        Tutup
+                    </button>
+                </div>
+            `;
+
+            content.innerHTML = html;
+            modal.classList.remove('hidden');
+        }
+
+
+
+        // Admin functions
+        document.getElementById('adminLoginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('adminUsername').value;
+            const password = document.getElementById('adminPassword').value;
+            
+            if (username === 'admin' && password === 'admin123') {
+                isAdminLoggedIn = true;
+                document.getElementById('adminLogin').classList.add('hidden');
+                document.getElementById('adminDashboard').classList.remove('hidden');
+                loadAdminData();
+            } else {
+                alert('Username atau password salah!');
+            }
+        });
+
+        function adminLogout() {
+            isAdminLoggedIn = false;
+            document.getElementById('adminLogin').classList.remove('hidden');
+            document.getElementById('adminDashboard').classList.add('hidden');
+            document.getElementById('adminUsername').value = '';
+            document.getElementById('adminPassword').value = '';
+        }
+
+        function loadAdminData() {
+            const totalOrders = orders.length;
+            const today = new Date().toDateString();
+            const todayOrders = orders.filter(order => new Date(order.date).toDateString() === today).length;
+            const totalRevenue = orders.reduce((total, order) => total + order.total, 0);
+
+            document.getElementById('totalOrders').textContent = totalOrders;
+            document.getElementById('todayOrders').textContent = todayOrders;
+            document.getElementById('totalRevenue').textContent = `Rp ${totalRevenue.toLocaleString('id-ID')}`;
+
+            // Display orders list
+            const ordersList = document.getElementById('ordersList');
+            if (orders.length === 0) {
+                ordersList.innerHTML = '<p class="text-gray-500 text-center">Belum ada pesanan</p>';
+                return;
+            }
+
+            let html = '';
+            orders.reverse().forEach(order => {
+                html += `
+                    <div class="border rounded-lg p-4 mb-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h4 class="font-bold">${order.id}</h4>
+                                <p class="text-sm text-gray-600">${new Date(order.date).toLocaleString('id-ID')}</p>
+                            </div>
+                            <select onchange="updateOrderStatus('${order.id}', this.value)" class="border rounded px-2 py-1">
+                                <option value="Menunggu Konfirmasi" ${order.status === 'Menunggu Konfirmasi' ? 'selected' : ''}>Menunggu Konfirmasi</option>
+                                <option value="Diproses" ${order.status === 'Diproses' ? 'selected' : ''}>Diproses</option>
+                                <option value="Dikirim" ${order.status === 'Dikirim' ? 'selected' : ''}>Dikirim</option>
+                                <option value="Selesai" ${order.status === 'Selesai' ? 'selected' : ''}>Selesai</option>
+                            </select>
+                        </div>
+                        <div class="mb-2">
+                            <strong>Pembeli:</strong> ${order.customer.name} (${order.customer.phone})
+                        </div>
+                        <div class="mb-2">
+                            <strong>Items:</strong>
+                            <ul class="list-disc list-inside ml-4">
+                                ${order.items.map(item => `<li>${item.name} x${item.quantity}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <div class="text-right">
+                            <strong>Total: Rp ${order.total.toLocaleString('id-ID')}</strong>
+                        </div>
+                    </div>
+                `;
+            });
+
+            ordersList.innerHTML = html;
+        }
+
+        function updateOrderStatus(orderId, newStatus) {
+            const orderIndex = orders.findIndex(order => order.id === orderId);
+            if (orderIndex !== -1) {
+                orders[orderIndex].status = newStatus;
+                localStorage.setItem('orders', JSON.stringify(orders));
+            }
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('productModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Handle contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Terima kasih! Pesan Anda telah dikirim. Kami akan segera menghubungi Anda.');
+            this.reset();
+        });
+
+        // Gallery functions
+        function showGalleryTab(tab) {
+            // Hide all gallery contents
+            document.querySelectorAll('.gallery-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('[id$="Tab"]').forEach(tabBtn => {
+                tabBtn.classList.remove('bg-primary', 'text-white');
+                tabBtn.classList.add('text-gray-600', 'hover:bg-gray-100');
+            });
+            
+            // Show selected content and activate tab
+            document.getElementById(tab + 'Gallery').classList.remove('hidden');
+            document.getElementById(tab + 'Tab').classList.add('bg-primary', 'text-white');
+            document.getElementById(tab + 'Tab').classList.remove('text-gray-600', 'hover:bg-gray-100');
+        }
+
+        // FAQ functions
+        function showFAQCategory(category) {
+            // Hide all FAQ contents
+            document.querySelectorAll('.faq-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('[id$="FAQ"]').forEach(tabBtn => {
+                tabBtn.classList.remove('bg-primary', 'text-white');
+                tabBtn.classList.add('text-gray-600', 'hover:bg-gray-100');
+            });
+            
+            // Show selected content and activate tab
+            document.getElementById(category + 'FAQContent').classList.remove('hidden');
+            document.getElementById(category + 'FAQ').classList.add('bg-primary', 'text-white');
+            document.getElementById(category + 'FAQ').classList.remove('text-gray-600', 'hover:bg-gray-100');
+        }
+
+        function toggleFAQ(faqId) {
+            const faqContent = document.getElementById(faqId);
+            const faqIcon = document.getElementById(faqId + '-icon');
+            
+            if (faqContent.classList.contains('hidden')) {
+                faqContent.classList.remove('hidden');
+                faqIcon.textContent = '-';
+            } else {
+                faqContent.classList.add('hidden');
+                faqIcon.textContent = '+';
+            }
+        }
+
+        // Google Sheets functions
+        async function loadLiveOrders() {
+            try {
+                showLoadingIndicator(true);
+                
+                // Try multiple methods to fetch Google Sheets data
+                let data = null;
+                
+                // Method 1: Direct fetch with CSV format
+                try {
+                    const csvUrl = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=0`;
+                    const response = await fetch(csvUrl);
+                    if (response.ok) {
+                        const csvText = await response.text();
+                        data = parseCSVData(csvText);
+                    }
+                } catch (e) {
+                    console.log('CSV method failed, trying alternative...');
+                }
+                
+                // Method 2: Use alternative CORS proxy if CSV fails
+                if (!data) {
+                    try {
+                        const proxyUrl = 'https://corsproxy.io/?';
+                        const response = await fetch(proxyUrl + encodeURIComponent(SHEET_URL));
+                        if (response.ok) {
+                            const text = await response.text();
+                            const jsonText = text.substring(47).slice(0, -2);
+                            const jsonData = JSON.parse(jsonText);
+                            data = processSheetData(jsonData);
+                        }
+                    } catch (e) {
+                        console.log('Proxy method failed, using demo data...');
+                    }
+                }
+                
+                // Method 3: Use demo data if all methods fail
+                if (!data || data.length === 0) {
+                    data = getDemoLiveOrders();
+                }
+                
+                liveOrders = data;
+                displayLiveOrders();
+                updateLastRefreshTime();
+                
+            } catch (error) {
+                console.error('Error loading live orders:', error);
+                // Fallback to demo data
+                liveOrders = getDemoLiveOrders();
+                displayLiveOrders();
+                updateLastRefreshTime();
+            } finally {
+                showLoadingIndicator(false);
+            }
+        }
+
+        function parseCSVData(csvText) {
+            const lines = csvText.split('\n');
+            const orders = [];
+            
+            // Skip header row
+            for (let i = 1; i < lines.length; i++) {
+                const line = lines[i].trim();
+                if (!line) continue;
+                
+                const columns = line.split(',').map(col => col.replace(/"/g, '').trim());
+                
+                if (columns.length >= 4 && columns[0]) {
+                    const order = {
+                        orderId: columns[0] || '',
+                        customerName: columns[1] || '',
+                        product: columns[2] || '',
+                        status: columns[3] || '',
+                        orderDate: columns[4] || '',
+                        resi: columns[5] || '',
+                        courier: columns[6] || '',
+                        notes: columns[7] || ''
+                    };
+                    
+                    orders.push(order);
+                }
+            }
+            
+            return orders;
+        }
+
+        function getDemoLiveOrders() {
+            return [
+                {
+                    orderId: 'ORD-20250115-001',
+                    customerName: 'Ahmad Rizki',
+                    product: 'KTM Custom UBSI',
+                    status: 'Selesai',
+                    orderDate: '2025-01-15',
+                    resi: 'JNE7820230145',
+                    courier: 'JNE',
+                    notes: 'Pesanan KTM sudah selesai dan dikirim'
+                },
+                {
+                    orderId: 'ORD-20250115-002',
+                    customerName: 'Siti Nurhaliza',
+                    product: 'Kaos Semot UBSI 2025',
+                    status: 'Sedang Diproses',
+                    orderDate: '2025-01-15',
+                    resi: '',
+                    courier: '',
+                    notes: 'Sedang dalam proses sablon, estimasi selesai besok'
+                },
+                {
+                    orderId: 'ORD-20250115-003',
+                    customerName: 'Budi Santoso',
+                    product: 'Papermop Semot 2025',
+                    status: 'Siap Dikirim',
+                    orderDate: '2025-01-14',
+                    resi: 'TIKI230187456',
+                    courier: 'TIKI',
+                    notes: 'Produk sudah selesai, sedang dalam perjalanan'
+                },
+                {
+                    orderId: 'ORD-20250115-004',
+                    customerName: 'Dewi Sartika',
+                    product: 'Name Tag Semot 2025',
+                    status: 'Menunggu Konfirmasi',
+                    orderDate: '2025-01-15',
+                    resi: '',
+                    courier: '',
+                    notes: 'Menunggu konfirmasi pembayaran dari customer'
+                },
+                {
+                    orderId: 'ORD-20250114-005',
+                    customerName: 'Eko Prasetyo',
+                    product: 'Konsultasi Portfolio',
+                    status: 'Diproses',
+                    orderDate: '2025-01-14',
+                    resi: '',
+                    courier: '',
+                    notes: 'Sesi konsultasi dijadwalkan hari ini pukul 14:00'
+                },
+                {
+                    orderId: 'ORD-20250114-006',
+                    customerName: 'Maya Sari',
+                    product: 'KTM Custom UBSI',
+                    status: 'Selesai',
+                    orderDate: '2025-01-13',
+                    resi: 'J&T123456789',
+                    courier: 'J&T',
+                    notes: 'Paket sudah sampai di tujuan'
+                },
+                {
+                    orderId: 'ORD-20250114-007',
+                    customerName: 'Rudi Hermawan',
+                    product: 'Kaos Semot UBSI 2025 (2 pcs)',
+                    status: 'Dikirim',
+                    orderDate: '2025-01-12',
+                    resi: 'POS987654321',
+                    courier: 'POS',
+                    notes: 'Paket dalam perjalanan, estimasi sampai besok'
+                },
+                {
+                    orderId: 'ORD-20250113-008',
+                    customerName: 'Linda Wati',
+                    product: 'Papermop + Name Tag Combo',
+                    status: 'Selesai',
+                    orderDate: '2025-01-11',
+                    resi: 'SICEPAT456789',
+                    courier: 'SiCepat',
+                    notes: 'Pesanan combo sudah diterima customer'
+                }
+            ];
+        }
+
+        function processSheetData(data) {
+            const rows = data.table.rows;
+            const orders = [];
+            
+            // Skip header row (index 0)
+            for (let i = 1; i < rows.length; i++) {
+                const row = rows[i];
+                if (!row.c || !row.c[0] || !row.c[0].v) continue; // Skip empty rows
+                
+                const order = {
+                    orderId: row.c[0]?.v || '',
+                    customerName: row.c[1]?.v || '',
+                    product: row.c[2]?.v || '',
+                    status: row.c[3]?.v || '',
+                    orderDate: row.c[4]?.v || '',
+                    resi: row.c[5]?.v || '',
+                    courier: row.c[6]?.v || '',
+                    notes: row.c[7]?.v || ''
+                };
+                
+                // Only add if orderId exists
+                if (order.orderId.trim()) {
+                    orders.push(order);
+                }
+            }
+            
+            return orders;
+        }
+
+        function displayLiveOrders() {
+            const container = document.getElementById('liveOrdersList');
+            const statusIndicator = document.getElementById('connectionStatus');
+            
+            // Update connection status
+            if (liveOrders.length > 0) {
+                // Check if data is from Google Sheets or demo
+                const isDemo = liveOrders.some(order => order.orderId.includes('ORD-20250115'));
+                if (isDemo) {
+                    statusIndicator.innerHTML = '🟡 Demo Data';
+                    statusIndicator.className = 'px-2 py-1 rounded text-xs font-bold bg-yellow-100 text-yellow-800';
+                } else {
+                    statusIndicator.innerHTML = '🟢 Live Data';
+                    statusIndicator.className = 'px-2 py-1 rounded text-xs font-bold bg-green-100 text-green-800';
+                }
+            } else {
+                statusIndicator.innerHTML = '🔴 No Data';
+                statusIndicator.className = 'px-2 py-1 rounded text-xs font-bold bg-red-100 text-red-800';
+            }
+            
+            if (liveOrders.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-8 text-gray-500">
+                        <div class="text-4xl mb-2">📋</div>
+                        <p>Belum ada data pesanan</p>
+                        <p class="text-sm">Data akan muncul setelah ada pesanan di Google Sheets</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            let html = '';
+            
+            // Show latest 10 orders
+            const recentOrders = liveOrders.slice(0, 10);
+            
+            recentOrders.forEach(order => {
+                const statusColor = getStatusColor(order.status);
+                const statusIcon = getStatusIcon(order.status);
+                
+                html += `
+                    <div class="bg-gray-50 rounded-lg p-4 border border-gray-200 hover:shadow-md transition-shadow">
+                        <div class="flex justify-between items-start">
+                            <div class="flex-1">
+                                <div class="flex items-center space-x-2 mb-2">
+                                    <span class="font-bold text-gray-800">${order.orderId}</span>
+                                    <span class="px-2 py-1 rounded-full text-xs font-bold ${statusColor}">
+                                        ${statusIcon} ${order.status}
+                                    </span>
+                                </div>
+                                <div class="text-sm text-gray-600 space-y-1">
+                                    <p><strong>Customer:</strong> ${order.customerName}</p>
+                                    <p><strong>Produk:</strong> ${order.product}</p>
+                                    ${order.orderDate ? `<p><strong>Tanggal:</strong> ${formatDate(order.orderDate)}</p>` : ''}
+                                    ${order.resi ? `
+                                        <p><strong>No Resi:</strong> 
+                                            <span class="font-mono bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs mr-1">
+                                                ${order.resi}
+                                            </span>
+                                            <button onclick="copyResiNumber('${order.resi}')" 
+                                                    class="bg-green-500 text-white px-2 py-1 rounded text-xs hover:bg-green-600 transition-colors mr-1"
+                                                    title="Salin nomor resi">
+                                                📋
+                                            </button>
+                                            <button onclick="trackShipment('${order.resi}', '${order.courier}')" 
+                                                    class="bg-blue-500 text-white px-2 py-1 rounded text-xs hover:bg-blue-600 transition-colors"
+                                                    title="Lacak paket">
+                                                📦
+                                            </button>
+                                        </p>
+                                    ` : ''}
+                                </div>
+                            </div>
+                            <div class="flex flex-col space-y-2">
+                                <button onclick="trackLiveOrder('${order.orderId}')" 
+                                        class="bg-primary text-white px-3 py-1 rounded text-xs hover:bg-green-700 transition-colors">
+                                    Track
+                                </button>
+                                ${order.resi ? `
+                                    <button onclick="trackShipment('${order.resi}', '${order.courier}')" 
+                                            class="bg-blue-600 text-white px-3 py-1 rounded text-xs hover:bg-blue-700 transition-colors">
+                                        Resi
+                                    </button>
+                                ` : ''}
+                            </div>
+                        </div>
+                        ${order.notes ? `
+                            <div class="mt-3 p-2 bg-yellow-50 rounded border border-yellow-200">
+                                <p class="text-xs text-yellow-800"><strong>Catatan:</strong> ${order.notes}</p>
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+        }
+
+        function getStatusColor(status) {
+            const statusMap = {
+                'Menunggu Konfirmasi': 'bg-yellow-100 text-yellow-800',
+                'Diproses': 'bg-blue-100 text-blue-800',
+                'Sedang Diproses': 'bg-blue-100 text-blue-800',
+                'Siap Dikirim': 'bg-purple-100 text-purple-800',
+                'Dikirim': 'bg-orange-100 text-orange-800',
+                'Selesai': 'bg-green-100 text-green-800',
+                'Dibatalkan': 'bg-red-100 text-red-800'
+            };
+            return statusMap[status] || 'bg-gray-100 text-gray-800';
+        }
+
+        function getStatusIcon(status) {
+            const iconMap = {
+                'Menunggu Konfirmasi': '⏳',
+                'Diproses': '⚙️',
+                'Sedang Diproses': '⚙️',
+                'Siap Dikirim': '📦',
+                'Dikirim': '🚚',
+                'Selesai': '✅',
+                'Dibatalkan': '❌'
+            };
+            return iconMap[status] || '📋';
+        }
+
+        function formatDate(dateString) {
+            try {
+                // Handle different date formats from Google Sheets
+                const date = new Date(dateString);
+                if (isNaN(date.getTime())) {
+                    return dateString; // Return original if can't parse
+                }
+                return date.toLocaleDateString('id-ID');
+            } catch (error) {
+                return dateString;
+            }
+        }
+
+        function showLoadingIndicator(show) {
+            const indicator = document.getElementById('loadingIndicator');
+            if (show) {
+                indicator.classList.remove('hidden');
+            } else {
+                indicator.classList.add('hidden');
+            }
+        }
+
+        function updateLastRefreshTime() {
+            const lastUpdate = document.getElementById('lastUpdate');
+            const now = new Date();
+            lastUpdate.textContent = `Update: ${now.toLocaleTimeString('id-ID')}`;
+        }
+
+        function displayErrorMessage() {
+            const container = document.getElementById('liveOrdersList');
+            container.innerHTML = `
+                <div class="text-center py-8 text-red-500">
+                    <div class="text-4xl mb-2">⚠️</div>
+                    <p class="font-bold">Gagal memuat data</p>
+                    <p class="text-sm">Periksa koneksi internet atau coba refresh</p>
+                    <button onclick="loadLiveOrders()" class="mt-3 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition-colors">
+                        Coba Lagi
+                    </button>
+                </div>
+            `;
+        }
+
+        function refreshLiveOrders() {
+            loadLiveOrders();
+        }
+
+        function startAutoRefresh() {
+            // Refresh every 30 seconds
+            refreshInterval = setInterval(() => {
+                loadLiveOrders();
+            }, 30000);
+        }
+
+        function stopAutoRefresh() {
+            if (refreshInterval) {
+                clearInterval(refreshInterval);
+            }
+        }
+
+        function trackLiveOrder(orderId) {
+            // First try to find in live orders
+            const liveOrder = liveOrders.find(order => order.orderId === orderId);
+            
+            if (liveOrder) {
+                // Convert live order to demo format for tracking
+                const trackingOrder = {
+                    id: liveOrder.orderId,
+                    product: liveOrder.product,
+                    customer: liveOrder.customerName,
+                    status: liveOrder.status,
+                    step: getStepFromStatus(liveOrder.status),
+                    orderDate: liveOrder.orderDate,
+                    estimatedCompletion: calculateEstimatedCompletion(liveOrder.orderDate),
+                    resi: liveOrder.resi,
+                    courier: liveOrder.courier,
+                    notes: liveOrder.notes || `Status terkini: ${liveOrder.status}`
+                };
+                
+                // Add to demo orders temporarily for tracking
+                demoOrders[orderId] = trackingOrder;
+                
+                // Set input and track
+                document.getElementById('orderIdInput').value = orderId;
+                trackOrder(orderId);
+            } else {
+                alert('Data pesanan tidak ditemukan. Silakan coba refresh data.');
+            }
+        }
+
+        function getStepFromStatus(status) {
+            const stepMap = {
+                'Menunggu Konfirmasi': 1,
+                'Diproses': 2,
+                'Sedang Diproses': 2,
+                'Siap Dikirim': 3,
+                'Dikirim': 4,
+                'Selesai': 4,
+                'Dibatalkan': 1
+            };
+            return stepMap[status] || 1;
+        }
+
+        function calculateEstimatedCompletion(orderDate) {
+            try {
+                const date = new Date(orderDate);
+                date.setDate(date.getDate() + 3); // Add 3 days
+                return date.toISOString().split('T')[0];
+            } catch (error) {
+                const today = new Date();
+                today.setDate(today.getDate() + 3);
+                return today.toISOString().split('T')[0];
+            }
+        }
+
+        // Tracking functions
+        const demoOrders = {
+            'ORD-20250101-001': {
+                id: 'ORD-20250101-001',
+                product: 'KTM Custom',
+                customer: 'Andi Wijaya',
+                status: 'Selesai',
+                step: 4,
+                orderDate: '2025-01-01',
+                estimatedCompletion: '2025-01-03',
+                actualCompletion: '2025-01-03',
+                resi: 'JNE7820230145',
+                courier: 'JNE',
+                notes: 'Pesanan telah selesai dan dikirim via JNE. Paket sudah sampai di tujuan.'
+            },
+            'ORD-20250101-002': {
+                id: 'ORD-20250101-002',
+                product: 'Kaos Semot UBSI 2025',
+                customer: 'Budi Santoso',
+                status: 'Sedang Diproses',
+                step: 2,
+                orderDate: '2025-01-01',
+                estimatedCompletion: '2025-01-05',
+                notes: 'Sedang dalam proses sablon. Estimasi selesai 2 hari lagi.'
+            },
+            'ORD-20250101-003': {
+                id: 'ORD-20250101-003',
+                product: 'Papermop Semot 2025',
+                customer: 'Citra Lestari',
+                status: 'Siap Dikirim',
+                step: 3,
+                orderDate: '2025-01-01',
+                estimatedCompletion: '2025-01-04',
+                resi: 'TIKI230187456',
+                courier: 'TIKI',
+                notes: 'Produk sudah selesai dan siap dikirim. Paket sedang dalam perjalanan ke alamat tujuan.'
+            },
+            'ORD-20250101-004': {
+                id: 'ORD-20250101-004',
+                product: 'Konsultasi Skripsi 1 Bab',
+                customer: 'Dina Marlina',
+                status: 'Menunggu Konfirmasi',
+                step: 1,
+                orderDate: '2025-01-01',
+                estimatedCompletion: '2025-01-02',
+                notes: 'Menunggu jadwal konsultasi dari customer. Silakan hubungi admin untuk konfirmasi jadwal.'
+            }
+        };
+
+        document.getElementById('trackingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const orderId = document.getElementById('orderIdInput').value.trim().toUpperCase();
+            trackOrder(orderId);
+        });
+
+        function trackDemo(orderId) {
+            document.getElementById('orderIdInput').value = orderId;
+            trackOrder(orderId);
+        }
+
+        function trackOrder(orderId) {
+            const order = demoOrders[orderId];
+            
+            if (!order) {
+                alert('Nomor pesanan tidak ditemukan. Pastikan nomor pesanan benar atau hubungi admin untuk bantuan.');
+                return;
+            }
+
+            // Show tracking result
+            document.getElementById('trackingResult').classList.remove('hidden');
+            
+            // Update order status
+            document.getElementById('orderStatus').textContent = order.status;
+            document.getElementById('orderInfo').textContent = `Pesanan ${order.product} - ${order.customer}`;
+            
+            // Update progress steps
+            updateProgressSteps(order.step);
+            
+            // Update order details
+            updateOrderDetails(order);
+            
+            // Scroll to result
+            document.getElementById('trackingResult').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function updateProgressSteps(currentStep) {
+            // Reset all steps
+            for (let i = 1; i <= 4; i++) {
+                const step = document.getElementById(`step${i}`);
+                const line = document.getElementById(`line${i}`);
+                
+                if (i <= currentStep) {
+                    step.classList.remove('bg-gray-300');
+                    step.classList.add('bg-primary');
+                    if (line) {
+                        line.classList.remove('bg-gray-300');
+                        line.classList.add('bg-primary');
+                    }
+                } else {
+                    step.classList.remove('bg-primary');
+                    step.classList.add('bg-gray-300');
+                    if (line) {
+                        line.classList.remove('bg-primary');
+                        line.classList.add('bg-gray-300');
+                    }
+                }
+            }
+        }
+
+        function updateOrderDetails(order) {
+            const detailsHtml = `
+                <div class="space-y-4">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800 mb-2">📋 Detail Pesanan</h4>
+                            <div class="space-y-1 text-sm">
+                                <p><strong>Order ID:</strong> ${order.id}</p>
+                                <p><strong>Produk:</strong> ${order.product}</p>
+                                <p><strong>Customer:</strong> ${order.customer}</p>
+                                <p><strong>Tanggal Pesan:</strong> ${new Date(order.orderDate).toLocaleDateString('id-ID')}</p>
+                                ${order.resi ? `<p><strong>No. Resi:</strong> <span class="font-mono bg-yellow-100 px-2 py-1 rounded text-primary font-bold">${order.resi}</span></p>` : ''}
+                                ${order.courier ? `<p><strong>Kurir:</strong> ${order.courier}</p>` : ''}
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800 mb-2">⏰ Timeline</h4>
+                            <div class="space-y-1 text-sm">
+                                <p><strong>Estimasi Selesai:</strong> ${new Date(order.estimatedCompletion).toLocaleDateString('id-ID')}</p>
+                                ${order.actualCompletion ? `<p><strong>Selesai:</strong> ${new Date(order.actualCompletion).toLocaleDateString('id-ID')}</p>` : ''}
+                                <p><strong>Status:</strong> <span class="font-bold text-primary">${order.status}</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <h4 class="font-bold text-gray-800 mb-2">📝 Catatan</h4>
+                        <p class="text-sm text-gray-700">${order.notes}</p>
+                    </div>
+                    ${order.resi ? `
+                        <div class="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                            <h4 class="font-bold text-blue-800 mb-3">📦 Lacak Pengiriman</h4>
+                            <p class="text-sm text-blue-700 mb-3">Pesanan Anda sudah dikirim! Gunakan nomor resi untuk melacak paket:</p>
+                            <div class="flex flex-col sm:flex-row gap-2">
+                                <button onclick="trackShipment('${order.resi}', '${order.courier}')" class="flex-1 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors font-bold text-sm">
+                                    🔍 Lacak di CekResi.com
+                                </button>
+                                <button onclick="copyResi('${order.resi}')" class="bg-blue-100 text-blue-800 py-2 px-4 rounded-lg hover:bg-blue-200 transition-colors font-bold text-sm">
+                                    📋 Copy Resi
+                                </button>
+                            </div>
+                            <p class="text-xs text-blue-600 mt-2">* Akan membuka tab baru ke cekresi.com untuk tracking real-time</p>
+                        </div>
+                    ` : ''}
+                </div>
+            `;
+            
+            document.getElementById('orderDetails').innerHTML = detailsHtml;
+        }
+
+        function openWhatsAppTracking() {
+            const orderId = document.getElementById('orderIdInput').value || 'ORDER_ID_ANDA';
+            const message = `Halo admin, saya ingin menanyakan status pesanan ${orderId}. Terima kasih.`;
+            const whatsappUrl = `https://api.whatsapp.com/send?phone=6281298227738&text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        function copyOrderId() {
+            const orderId = document.getElementById('orderIdInput').value;
+            if (orderId) {
+                navigator.clipboard.writeText(orderId).then(() => {
+                    alert('Order ID berhasil dicopy!');
+                });
+            } else {
+                alert('Masukkan Order ID terlebih dahulu!');
+            }
+        }
+
+        function trackShipment(resi, courier) {
+            // Open cekresi.com with the tracking number
+            const cekResiUrl = `https://cekresi.com/?noresi=${resi}`;
+            window.open(cekResiUrl, '_blank');
+        }
+
+        function copyResi(resi) {
+            navigator.clipboard.writeText(resi).then(() => {
+                // Show feedback
+                const button = event.target;
+                const originalText = button.innerHTML;
+                button.innerHTML = '✅ Tersalin!';
+                button.classList.add('bg-green-100', 'text-green-800');
+                button.classList.remove('bg-blue-100', 'text-blue-800');
+                
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.classList.remove('bg-green-100', 'text-green-800');
+                    button.classList.add('bg-blue-100', 'text-blue-800');
+                }, 2000);
+            }).catch(() => {
+                alert('Nomor resi berhasil dicopy: ' + resi);
+            });
+        }
+
+        function copyResiNumber(resi) {
+            navigator.clipboard.writeText(resi).then(() => {
+                // Show feedback
+                const button = event.target;
+                const originalText = button.innerHTML;
+                button.innerHTML = '✅';
+                button.classList.add('bg-green-700');
+                button.classList.remove('bg-green-500');
+                
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.classList.remove('bg-green-700');
+                    button.classList.add('bg-green-500');
+                }, 1500);
+            }).catch(() => {
+                alert('Nomor resi berhasil dicopy: ' + resi);
+            });
+        }
+
+        function trackDirectResi() {
+            const resiInput = document.getElementById('directResiInput');
+            const resiNumber = resiInput.value.trim();
+            
+            if (!resiNumber) {
+                alert('Mohon masukkan nomor resi terlebih dahulu!');
+                resiInput.focus();
+                return;
+            }
+            
+            // Open cekresi.com with the tracking number
+            const cekResiUrl = `https://cekresi.com/?noresi=${resiNumber}`;
+            window.open(cekResiUrl, '_blank');
+            
+            // Clear input after tracking
+            resiInput.value = '';
+        }
+
+        // Allow Enter key to trigger direct tracking
+        document.addEventListener('DOMContentLoaded', function() {
+            const directResiInput = document.getElementById('directResiInput');
+            if (directResiInput) {
+                directResiInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        trackDirectResi();
+                    }
+                });
+            }
+        });
+
+        // Quick KTM form handler
+        function sendQuickKTMData() {
+            const form = document.getElementById('ktmQuickForm');
+            const formData = new FormData(form);
+            
+            const requiredFields = ['template', 'fullName', 'nim', 'prodi'];
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                const input = form.querySelector(`[name="${field}"]`);
+                if (!input.value.trim()) {
+                    input.focus();
+                    alert(`Mohon isi ${field === 'fullName' ? 'Nama Lengkap' : field === 'prodi' ? 'Program Studi' : field}`);
+                    isValid = false;
+                    return;
+                }
+            });
+            
+            if (!isValid) return;
+
+            // Show modal with message template (same as modal form)
+            showQuickMessageTemplate(formData);
+        }
+
+        function showQuickMessageTemplate(formData) {
+            const modal = document.getElementById('productModal');
+            const title = document.getElementById('modalTitle');
+            const content = document.getElementById('modalContent');
+
+            title.textContent = 'Kirim Data via WhatsApp';
+            
+            const message = `${formData.get('fullName')}\n${formData.get('nim')}\n${formData.get('prodi')}`;
+            
+            let html = `
+                <div class="space-y-6">
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h4 class="font-bold text-blue-800 mb-2">Langkah Selanjutnya:</h4>
+                        <ol class="text-sm text-blue-700 space-y-2 list-decimal list-inside">
+                            <li>Copy pesan di bawah ini</li>
+                            <li>Klik tombol "Buka WhatsApp"</li>
+                            <li>Paste pesan yang sudah dicopy</li>
+                            <li>Kirim pas foto Anda</li>
+                            <li>Tunggu konfirmasi dari admin</li>
+                            <li>Lanjutkan pembelian melalui link yang diberikan</li>
+                        </ol>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Template: ${formData.get('template')}</label>
+                        <label class="block text-sm font-medium mb-2">Copy pesan berikut:</label>
+                        <textarea id="messageTemplate" readonly class="w-full border rounded-lg px-3 py-2 h-24 bg-gray-50" onclick="this.select()">${message}</textarea>
+                        <p class="text-xs text-gray-600 mt-1">Klik pada kotak pesan untuk select semua, lalu copy (Ctrl+C)</p>
+                    </div>
+                    
+                    <div class="bg-red-50 p-4 rounded-lg border border-red-200">
+                        <p class="text-sm text-red-800 font-bold mb-2">
+                            📸 WAJIB: Kirim Pas Foto via WhatsApp!
+                        </p>
+                        <ul class="text-sm text-red-700 space-y-1 list-disc list-inside">
+                            <li>Setelah kirim pesan di atas, langsung kirim foto pas Anda</li>
+                            <li>Format: JPG/PNG, latar putih, foto formal</li>
+                            <li>Ukuran file maksimal 5MB</li>
+                            <li>Foto harus jelas dan tidak blur</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <button onclick="copyMessage()" class="w-full bg-accent text-primary py-2 rounded-lg hover:bg-yellow-400 transition-colors font-bold">
+                            📋 Copy Pesan
+                        </button>
+                        
+                        <div class="grid grid-cols-2 gap-2">
+                            <button onclick="openWhatsAppWeb()" class="bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition-colors font-bold text-sm">
+                                💻 WA Web
+                            </button>
+                            <button onclick="openWhatsAppMobile()" class="bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition-colors font-bold text-sm">
+                                📱 WA Mobile
+                            </button>
+                        </div>
+                        
+                        <div class="bg-green-50 p-3 rounded-lg">
+                            <p class="text-sm text-green-800 font-medium mb-2">Manual WhatsApp:</p>
+                            <div class="flex items-center space-x-2 mb-2">
+                                <span class="text-xs text-green-700">Nomor:</span>
+                                <span id="phoneNumber" class="font-mono bg-white px-2 py-1 rounded text-sm">081298227738</span>
+                                <button onclick="copyPhoneNumber()" class="bg-green-600 text-white px-2 py-1 rounded text-xs hover:bg-green-700 transition-colors">
+                                    📋 Salin
+                                </button>
+                            </div>
+                            <p class="text-xs text-green-700">Copy pesan di atas, lalu buka WhatsApp dan kirim ke nomor tersebut</p>
+                        </div>
+                    </div>
+                    
+                    <button onclick="closeModal()" class="w-full bg-gray-500 text-white py-2 rounded-lg hover:bg-gray-600 transition-colors">
+                        Tutup
+                    </button>
+                </div>
+            `;
+
+            content.innerHTML = html;
+            modal.classList.remove('hidden');
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-accent rounded-full flex items-center justify-center">
+                            <span class="text-primary font-bold">U</span>
+                        </div>
+                        <h3 class="text-xl font-bold">UBSI Story</h3>
+                    </div>
+                    <p class="text-gray-300">Merchandise kampus berkualitas tinggi dengan desain eksklusif untuk seluruh civitas akademika UBSI.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Kontak Kami</h4>
+                    <div class="space-y-2 text-gray-300">
+                        <p>📱 081298227738</p>
+                        <p>📧 gipsinovation@gmail.com</p>
+                        <p>📍 Walantaka, Serang, Banten</p>
+                        <p>📷 <a href="https://instagram.com/ubsi.story" target="_blank" class="text-accent hover:text-yellow-400 transition-colors">@ubsi.story</a></p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Jam Operasional</h4>
+                    <div class="space-y-1 text-gray-300 text-sm">
+                        <p><span class="font-semibold">Senin-Jumat:</span> 08.00-16.00 WIB</p>
+                        <p><span class="font-semibold">Sabtu:</span> 08.00-14.00 WIB</p>
+                        <p><span class="font-semibold">Minggu & Hari Libur:</span> Tutup</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-green-600 mt-8 pt-6 text-center">
+                <p class="text-gray-300">&copy; 2025 Gipsinnovation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96f376aea2fdfd15',t:'MTc1NTIwNjA4NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
